@@ -2,8 +2,8 @@ import { useState } from "react";
 import Link from "next/link";
 import useScrollLock from "@/utils/hooks/useScrollLock";
 
-import Login from "@/components/ui/Login";
 import IconMenu from "@/components/svg/IconMenu";
+import Login from "@/components/ui/Login";
 import IconHome from "@/components/svg/IconHome";
 import IconCode from "@/components/svg/IconCode";
 import IconMail from "@/components/svg/IconMail";
@@ -21,13 +21,13 @@ export default function NavMobile() {
     <>
       <nav className="flex flex-col max-h-screen md:hidden">
         <div className="flex justify-between py-4">
-          <button onClick={toggleMenu}>
+          <button onClick={toggleMenu} className="hover:bg-red">
             <IconMenu />
           </button>
           <Login />
         </div>
         {menuOpen && (
-          <div className=" h-screen overflow-hidden mb-20">
+          <div className="h-screen mb-20">
             <ul className="h-full flex justify-center items-center gap-10">
               <li>
                 <Link href="/" className="flex flex-col items-center gap-1">
