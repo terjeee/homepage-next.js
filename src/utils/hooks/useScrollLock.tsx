@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react";
 
 export default function useScrollLock() {
-  const bodyStyle = document.body.style;
-  const [isLocked, setIsLocked] = useState(bodyStyle.overflowY === "hidden");
+  const [isLocked, setIsLocked] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
-    bodyStyle.overflowY = isLocked ? "hidden" : "auto";
-  }, [bodyStyle, isLocked]);
+    if (typeof document !== "undefined") {
+      const bodyStyle = document.body.style;
+      bodyStyle.overflowY = isLocked ? "hidden" : "auto";
+    }
+  }, [isLocked]);
 
   const toggleScrollLock = () => {
-    setIsLocked(() => !isLocked);
+    setIsLocked((prevState) => !prevState);
   };
 
   return [toggleScrollLock];
