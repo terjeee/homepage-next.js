@@ -1,3 +1,1 @@
-export interface PropsChildren {
-  children: React.ReactNode;
-}
+export type Children = React.ReactNode;
