@@ -1,7 +1,7 @@
 import { SVGProps } from "react";
 
 const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={25} height={25} viewBox="0 0 20 20" {...props}>
+  <svg xmlns="http://www.w3.org/2000/svg" width={25} height={22.5} viewBox="0 0 20 20" {...props}>
     <title>{"github [#142]"}</title>
     <path
       fill="#000"
