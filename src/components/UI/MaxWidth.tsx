@@ -1,5 +1,11 @@
-import type { PropsChildren } from "@/types/types";
+import type { Children } from "@/types/types";
 
-export default function MaxWidth({ children }: PropsChildren) {
-  return <div className="px-4 max-w-screen-lg mx-auto">{children}</div>;
+interface Props {
+  children: Children;
+  width: "max-w-screen-sm" | "max-w-screen-md" | "max-w-screen-lg" | "max-w-screen-xl";
+  className?: string;
+}
+
+export default function MaxWidth(props: Props) {
+  return <div className={`${props.width} mx-auto ${props.className}`}>{props.children}</div>;
 }
