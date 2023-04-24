@@ -11,6 +11,17 @@ module.exports = {
       purple: "#DC6BAD",
       orange: "#FFA400",
     },
+    extend: {
+      animation: {
+        slideShow: "slideShow 15s linear infinite",
+      },
+      keyframes: {
+        slideShow: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+      },
+    },
   },
   plugins: [],
 };
