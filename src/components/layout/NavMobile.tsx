@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Link from "next/link";
+
 import useScrollLock from "@/utils/hooks/useScrollLock";
 
-import IconMenu from "@/components/svg/IconMenu";
+import IconMenu from "@/components/svg/ui/IconMenu";
 import Login from "@/components/ui/Login";
-import IconHome from "@/components/svg/IconHome";
-import IconCode from "@/components/svg/IconCode";
-import IconMail from "@/components/svg/IconMail";
+import IconHome from "@/components/svg/ui/IconHome";
+import IconCode from "@/components/svg/ui/IconCode";
+import IconMail from "@/components/svg/ui/IconMail";
 
 export default function NavMobile() {
   const [menuOpen, toggleMenuOpen] = useState(false);
@@ -21,7 +22,7 @@ export default function NavMobile() {
     <>
       <nav className="flex flex-col max-h-screen md:hidden">
         <div className="flex justify-between py-4">
-          <button onClick={toggleMenu} className="hover:bg-red">
+          <button onClick={toggleMenu}>
             <IconMenu />
           </button>
           <Login />
@@ -54,38 +55,3 @@ export default function NavMobile() {
     </>
   );
 }
-
-// z-index: -1;
-//   position: absolute;
-//   inset: 0;
-//   height: 100vh;
-//   display: flex;
-//   justify-content: center;
-//   background: color.$bg-1;
-//   padding-bottom: calc(layout.$page-padding * 2);
-
-//   .list {
-//     display: flex;
-//     align-items: center;
-//     gap: 2rem;
-
-//     li {
-//       .icon {
-//         display: block;
-//         padding: calc(layout.$page-padding / 2);
-//         margin: auto;
-
-//         svg {
-//           display: block;
-//           font-size: 1.5rem;
-//         }
-//       }
-
-//       &:hover .icon {
-//         background: color.$bg-1-shade;
-//         border-radius: 50%;
-//         transition: background 250ms ease-in-out;
-//       }
-//     }
-//   }
-// }
