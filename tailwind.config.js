@@ -18,7 +18,7 @@ module.exports = {
     },
     extend: {
       boxShadow: {
-        github: "rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.5) 0px 0px 0px 1px",
+        github: "rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.2) 0px 0px 0px 1px",
       },
       animation: {
         slideShow: "slideShow 55s linear infinite",
