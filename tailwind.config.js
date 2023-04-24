@@ -2,23 +2,31 @@
 module.exports = {
   content: ["./src/pages/**/*.{js,ts,jsx,tsx}", "./src/components/**/*.{js,ts,jsx,tsx}", "./src/app/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      quicksand: ["Quicksand", "sans-serif"],
+    },
     colors: {
       white: "#FFFFFF",
       black: "#000000",
       lightGrey: "#f0f0f0",
+      darkGrey: "rgba(169, 169, 169, 1)",
       blue: "#0969da",
       red: "#FF1B1C",
       purple: "#DC6BAD",
       orange: "#FFA400",
+      link: "#0969da",
     },
     extend: {
+      boxShadow: {
+        github: "rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.5) 0px 0px 0px 1px",
+      },
       animation: {
-        slideShow: "slideShow 15s linear infinite",
+        slideShow: "slideShow 55s linear infinite",
       },
       keyframes: {
         slideShow: {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-100%)" },
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
         },
       },
     },
