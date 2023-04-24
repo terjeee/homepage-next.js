@@ -1,12 +1,16 @@
-import type { PropsChildren } from "@/types/types";
+import type { Children } from "@/types/types";
 
+import MaxWidth from "@/components/ui/MaxWidth";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import MaxWidth from "@/components/ui/MaxWidth";
 
-export default function Layout({ children }: PropsChildren) {
+interface Props {
+  children: Children;
+}
+
+export default function Layout({ children }: Props) {
   return (
-    <MaxWidth>
+    <MaxWidth width="max-w-screen-lg" className="px-4">
       <Navbar />
       <main>{children}</main>
       <Footer />
