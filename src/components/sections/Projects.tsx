@@ -2,13 +2,18 @@ import { PROJECTS } from "@/assets/projects";
 
 import IconDots from "@/components/svg/misc/IconDots";
 import IconRepository from "@/components/svg/misc/IconRepository";
-import MaxWidth from "../ui/MaxWidth";
+import MaxWidth from "@/components/ui/MaxWidth";
+import SlideShow from "@/components/misc/SlideShow";
 
 export default function Projects() {
+  const projects = [...PROJECTS].reverse();
+
   return (
-    <MaxWidth width="max-w-screen-sm">
+    <MaxWidth width="max-w-screen-md">
+      <h1 className="py-6 text-center text-4xl tracking-widest font-silkscreen">PROSJEKTER</h1>
+      <SlideShow />
       <ul className="my-4 flex flex-col gap-4 sm:grid sm:auto-cols-fr">
-        {PROJECTS.reverse().map((el, index) => {
+        {projects.map((el, index) => {
           const colSpan = (index + 1) % 3 === 0 ? "col-span-2" : "col-span-1";
 
           return (
@@ -20,7 +25,7 @@ export default function Projects() {
                     <a href={el.link} target="_blank" rel="noreferrer" className="hover:underline">
                       <h2 className="text-sm font-bold text-link cursor-button">{el.title}</h2>
                     </a>
-                    <span className=" py-[0.1rem] px-[0.25rem] mx-auto text-[9px] font-bold text-center border border-[#A9A9A9] rounded-full">
+                    <span className="py-[0.1rem] px-[0.25rem] mx-auto text-[9px] font-bold text-center border border-[#A9A9A9] rounded-full">
                       Public
                     </span>
                   </div>
