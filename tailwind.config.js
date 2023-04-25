@@ -4,6 +4,8 @@ module.exports = {
   theme: {
     fontFamily: {
       quicksand: ["Quicksand", "sans-serif"],
+      schoolbell: ["Schoolbell", "cursive"],
+      silkscreen: ["Silkscreen", "cursive"],
     },
     colors: {
       white: "#FFFFFF",
