@@ -10,7 +10,7 @@ interface Props {
 
 export default function Layout({ children }: Props) {
   return (
-    <MaxWidth width="max-w-screen-lg" className="px-4">
+    <MaxWidth width="max-w-screen-md" className="px-4">
       <Navbar />
       <main>{children}</main>
       <Footer />

@@ -20,7 +20,7 @@ export default function NavMobile() {
 
   return (
     <>
-      <nav className="flex flex-col max-h-screen md:hidden">
+      <nav className="flex flex-col max-h-screen sm:hidden">
         <div className="flex justify-between py-4">
           <button onClick={toggleMenu}>
             <IconMenu />
