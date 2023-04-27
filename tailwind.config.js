@@ -6,7 +6,6 @@ module.exports = {
       quicksand: ["Quicksand", "sans-serif"],
       schoolbell: ["Schoolbell", "cursive"],
       silkscreen: ["Silkscreen", "cursive"],
-      silkscreen: ["Loto", "sans-serif"],
     },
     colors: {
       white: "#FFFFFF",
