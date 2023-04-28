@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import Login from "@/components/ui/Login";
+import Login from "@/components/misc/Login";
 
 export default function NavDesktop() {
   const currentPath = useRouter().pathname;

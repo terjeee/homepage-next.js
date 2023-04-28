@@ -1,4 +1,4 @@
-import MaxWidth from "../ui/MaxWidth";
+import MaxWidth from "./MaxWidth";
 
 import IconTs from "@/components/svg/technologies/IconTs";
 import IconJs from "@/components/svg/technologies/IconJs";

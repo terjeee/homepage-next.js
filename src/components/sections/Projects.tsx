@@ -2,7 +2,7 @@ import { PROJECTS } from "@/assets/projects";
 
 import IconDots from "@/components/svg/misc/IconDots";
 import IconRepository from "@/components/svg/misc/IconRepository";
-import MaxWidth from "@/components/ui/MaxWidth";
+import MaxWidth from "@/components/misc/MaxWidth";
 import SlideShow from "@/components/misc/SlideShow";
 
 export default function Projects() {

@@ -1,6 +1,6 @@
 import type { Children } from "@/types/types";
 
-import MaxWidth from "@/components/ui/MaxWidth";
+import MaxWidth from "@/components/misc/MaxWidth";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
