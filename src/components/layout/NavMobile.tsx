@@ -31,19 +31,19 @@ export default function NavMobile() {
           <div className="h-screen mb-20">
             <ul className="h-full flex justify-center items-center gap-10">
               <li>
-                <Link href="/" className="flex flex-col items-center gap-1">
+                <Link href="/" onClick={toggleMenu} className="flex flex-col items-center gap-1">
                   <IconHome />
                   <h2 className="text-lg font-medium">home</h2>
                 </Link>
               </li>
               <li>
-                <Link href="/" className="flex flex-col items-center gap-1">
+                <Link href="/" onClick={toggleMenu} className="flex flex-col items-center gap-1">
                   <IconCode />
                   <h2 className="text-lg font-medium">projects</h2>
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="flex flex-col items-center gap-1">
+                <Link href="/contact" onClick={toggleMenu} className="flex flex-col items-center gap-1">
                   <IconMail />
                   <h2 className="text-lg font-medium">contact</h2>
                 </Link>
