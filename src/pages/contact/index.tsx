@@ -65,7 +65,7 @@ export default function Contact() {
               ${emailValid ? "focus:outline-link" : "focus:outline-red"} ${emailValid ? "" : "border-2 border-red"}
             `}
           />
-          <label className="transform transition-all absolute top-0 left-0 h-full flex items-center pl-2 font-silkscreen text-darkGrey text-[10px] group-focus-within:text-[10px] peer-valid:text-[10px] group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0">
+          <label className="transform transition-all absolute top-0 left-0 h-full flex items-center pl-2 font-silkscreen text-black text-[10px] group-focus-within:text-[10px] peer-valid:text-[10px] group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0">
             Email
           </label>
           {!emailValid && <p className="px-1 text-red text-[10px] font-semibold">Please enter a valid email.</p>}
@@ -77,7 +77,7 @@ export default function Contact() {
             placeholder="Message"
             value={message}
             onChange={(event) => setMessage(event.target.value)}
-            className={`block p-2 w-full h-24 font-silkscreen text-[10px] text-black border border-darkGrey rounded ${
+            className={`block p-2 w-full h-24 font-silkscreen text-[10px] text-black placeholder-black border border-darkGrey rounded ${
               messageValid ? "focus:outline-link" : "focus:outline-red"
             } ${messageValid ? "" : "border-2 border-red"}`}
           />
