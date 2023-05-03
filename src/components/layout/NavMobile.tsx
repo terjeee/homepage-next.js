@@ -4,6 +4,7 @@ import Link from "next/link";
 import useScrollLock from "@/utils/hooks/useScrollLock";
 
 import IconMenu from "@/components/svg/misc/IconMenu";
+import SwitchDarkLight from "@/components/misc/SwitchDarkLight";
 import Login from "@/components/misc/Login";
 import IconHome from "@/components/svg/misc/IconHome";
 import IconCode from "@/components/svg/misc/IconCode";
@@ -25,7 +26,10 @@ export default function NavMobile() {
           <button onClick={toggleMenu}>
             <IconMenu />
           </button>
-          <Login />
+          <div className="flex gap-2">
+            <SwitchDarkLight />
+            <Login />
+          </div>
         </div>
         {menuOpen && (
           <div className="h-screen mb-20">

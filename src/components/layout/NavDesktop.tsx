@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import Login from "@/components/misc/Login";
+import SwitchDarkLight from "@/components/misc/SwitchDarkLight";
 
 export default function NavDesktop() {
   const currentPath = useRouter().pathname;
@@ -28,7 +29,8 @@ export default function NavDesktop() {
           </Link>
         ))}
       </div>
-      <div>
+      <div className="flex gap-2">
+        <SwitchDarkLight />
         <Login />
       </div>
     </nav>
