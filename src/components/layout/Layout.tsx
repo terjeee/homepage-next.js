@@ -10,10 +10,12 @@ interface Props {
 
 export default function Layout({ children }: Props) {
   return (
-    <MaxWidth width="max-w-screen-md" className="flex flex-col justify-between px-4 min-h-screen">
-      <Navbar />
-      <main>{children}</main>
-      <Footer />
-    </MaxWidth>
+    <div className="dark:bg-darkBg dark:text-white">
+      <MaxWidth width="max-w-screen-md" className="flex flex-col justify-between px-4 min-h-screen">
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+      </MaxWidth>
+    </div>
   );
 }

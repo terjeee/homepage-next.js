@@ -8,11 +8,9 @@ export default function NavDesktop() {
   const currentPath = useRouter().pathname;
   const paths = [
     ["home", "/"],
-    ["projects", "/"],
+    // ["projects", "/"],
     ["contact", "/contact"],
   ];
-
-  console.log(currentPath);
 
   return (
     <nav className="hidden py-4 sm:flex sm:justify-between items-center">
@@ -21,9 +19,9 @@ export default function NavDesktop() {
           <Link
             href={path}
             key={title}
-            className={`font-semibold ${
-              currentPath === path ? "text-black underline" : "text-darkGrey"
-            } hover:text-black underline-offset-8 hover:underline `}
+            className={`text-black dark:text-white font-semibold ${
+              currentPath === path ? "underline" : ""
+            } hover:text-black dark:hover:text-white underline-offset-4 hover:underline `}
           >
             {title}
           </Link>
