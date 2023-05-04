@@ -5,7 +5,6 @@ module.exports = {
   theme: {
     fontFamily: {
       quicksand: ["Quicksand", "sans-serif"],
-      schoolbell: ["Schoolbell", "cursive"],
       silkscreen: ["Silkscreen", "cursive"],
     },
     colors: {
@@ -18,6 +17,7 @@ module.exports = {
       purple: "#DC6BAD",
       orange: "#FFA400",
       link: "#0969da",
+      darkBg: "#0D1117",
     },
     extend: {
       boxShadow: {
