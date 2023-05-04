@@ -4,7 +4,7 @@ export default function IconMenu(props: SVGProps<SVGSVGElement>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={20} height={15} fill="none" viewBox="3.5 6.5 17 11" {...props}>
       <path
-        stroke="#000"
+        className="stroke-black dark:stroke-white"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={1.5}
