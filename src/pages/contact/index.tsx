@@ -1,12 +1,9 @@
 import { useState, useEffect, useRef, FormEvent } from "react";
-import { useRouter } from "next/router";
 import emailjs from "@emailjs/browser";
 
 import { regexEmail } from "@/utils/regex";
 
 export default function Contact() {
-  const router = useRouter();
-
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [emailValid, setEmailValid] = useState<boolean | undefined>(undefined);
@@ -48,12 +45,12 @@ export default function Contact() {
   }
 
   return (
-    <div className="h-full flex justify-center items-center gap-4">
+    <div className="my-36 h-full flex justify-center items-center gap-4">
       <h1 className="font-bold text-xl" style={{ writingMode: "vertical-rl", textOrientation: "upright" }}>
         CONTACT
       </h1>
       <form className="min-w-[45%] flex flex-col gap-3" onSubmit={sendEmail} ref={formData}>
-        <div className="relative group">
+        <div className="relative group ">
           <input
             id="formEmail"
             type="email"
@@ -62,11 +59,11 @@ export default function Contact() {
             spellCheck={false}
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            className={`p-2 w-full text-[11px] font-silkscreen text-black font-medium placeholder-black border border-darkGrey rounded
+            className={`p-2 w-full text-[11px] font-silkscreen text-black font-medium placeholder-black border border-darkGrey rounded black:border-darkGrey dark:bg-darkSecondary dark:text-white dark:placeholder-white dark:focus
               ${emailValid ? "focus:outline-link" : "focus:outline-red"} ${emailValid ? "" : "border-2 border-red"}
             `}
           />
-          {!emailValid && <p className="px-1 text-red text-[10px] font-semibold">Please enter a valid email.</p>}
+          {!emailValid && <p className="-mb-1 text-red text-[10px] font-semibold">Please enter a valid email.</p>}
         </div>
         <div>
           <textarea
@@ -76,11 +73,13 @@ export default function Contact() {
             spellCheck={false}
             value={message}
             onChange={(event) => setMessage(event.target.value)}
-            className={`block p-2 w-full h-24 text-[11px] font-silkscreen text-black font-medium placeholder-black border border-darkGrey rounded ${
+            className={`block p-2 w-full h-24 text-[11px] font-silkscreen text-black font-medium placeholder-black border border-darkGrey rounded dark:bg-darkSecondary dark:text-white dark:placeholder-white ${
               messageValid ? "focus:outline-link" : "focus:outline-red"
             } ${messageValid ? "" : "border-2 border-red"}`}
           />
-          {!messageValid && <p className="px-1 text-red text-[10px] font-semibold">Message needs to be 5-250 characters.</p>}
+          {!messageValid && (
+            <p className="-mb-1 text-red text-[10px] font-semibold">Message needs to be 5-250 characters.</p>
+          )}
         </div>
         <button
           className="py-3 px-2 text-xs text-white font-silkscreen font-bold tracking-wider bg-link border border-link rounded cursor-pointer disabled:bg-darkGrey disabled:border-darkGrey disabled:cursor-not-allowed"
