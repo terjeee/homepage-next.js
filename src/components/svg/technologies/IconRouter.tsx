@@ -1,15 +1,8 @@
 import type { SVGProps } from "react";
 
-export default function SvgIconRouter(props: SVGProps<SVGSVGElement>) {
+export default function IconRouter(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      width="1em"
-      height="1em"
-      viewBox="0 -58 256 256"
-      xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="xMidYMid"
-      {...props}
-    >
+    <svg width="1em" height="1em" viewBox="0 -58 256 256" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" {...props}>
       <title>React Router</title>
       <path d="M78.066 92.588c12.818 0 23.209-10.391 23.209-23.21 0-12.817-10.391-23.208-23.21-23.208-12.817 0-23.208 10.39-23.208 23.209 0 12.818 10.391 23.209 23.209 23.209Zm-54.857 46.417c12.818 0 23.209-10.39 23.209-23.209 0-12.817-10.391-23.208-23.21-23.208C10.392 92.588 0 102.978 0 115.796c0 12.818 10.39 23.21 23.209 23.21Zm209.582 0c12.818 0 23.209-10.39 23.209-23.209 0-12.817-10.39-23.208-23.209-23.208-12.818 0-23.209 10.39-23.209 23.208 0 12.818 10.391 23.21 23.21 23.21Z" />
       <path

@@ -1,6 +1,6 @@
 import type { SVGProps } from "react";
 
-export default function SvgIconSvelte(props: SVGProps<SVGSVGElement>) {
+export default function IconSvelte(props: SVGProps<SVGSVGElement>) {
   return (
     <svg width="1em" height="1em" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" {...props}>
       <title>Svelte</title>
