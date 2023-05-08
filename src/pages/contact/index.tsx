@@ -30,27 +30,25 @@ export default function Contact() {
   function sendEmail(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (formData.current) {
-      emailjs
-        .sendForm("service_contactForm", "template_70fzocf", formData.current, process.env.NEXT_PUBLIC_EMAILJS_KEY)
-        .then(
-          (result) => {
-            setEmail("");
-            setMessage("");
-          },
-          (error) => {
-            console.log(error);
-          }
-        );
+      emailjs.sendForm("service_contactForm", "template_70fzocf", formData.current, process.env.NEXT_PUBLIC_EMAILJS_KEY).then(
+        (result) => {
+          setEmail("");
+          setMessage("");
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
     }
   }
 
   return (
-    <div className="my-36 h-full flex justify-center items-center gap-4">
-      <h1 className="font-bold text-xl" style={{ writingMode: "vertical-rl", textOrientation: "upright" }}>
+    <div className="my-40 flex h-full items-center justify-center gap-4">
+      <h1 className="text-2xl font-bold tracking-widest" style={{ writingMode: "vertical-rl", textOrientation: "upright" }}>
         CONTACT
       </h1>
-      <form className="min-w-[45%] flex flex-col gap-3" onSubmit={sendEmail} ref={formData}>
-        <div className="relative group ">
+      <form className="flex min-w-[45%] flex-col gap-4" onSubmit={sendEmail} ref={formData}>
+        <div className="group relative ">
           <input
             id="formEmail"
             type="email"
@@ -59,11 +57,10 @@ export default function Contact() {
             spellCheck={false}
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            className={`p-2 w-full text-[11px] font-silkscreen text-black font-medium placeholder-black border border-darkGrey rounded black:border-darkGrey dark:bg-darkSecondary dark:text-white dark:placeholder-white dark:focus
-              ${emailValid ? "focus:outline-link" : "focus:outline-red"} ${emailValid ? "" : "border-2 border-red"}
+            className={`w-full rounded border border-darkGrey px-2 py-3 font-silkscreen text-sm font-medium text-black placeholder-black dark:bg-darkSecondary dark:text-white dark:placeholder-white
             `}
           />
-          {!emailValid && <p className="-mb-1 text-red text-[10px] font-semibold">Please enter a valid email.</p>}
+          {!emailValid && <p className="-mb-1 pt-1 text-xs font-semibold text-red">Please enter a valid email.</p>}
         </div>
         <div>
           <textarea
@@ -73,16 +70,12 @@ export default function Contact() {
             spellCheck={false}
             value={message}
             onChange={(event) => setMessage(event.target.value)}
-            className={`block p-2 w-full h-24 text-[11px] font-silkscreen text-black font-medium placeholder-black border border-darkGrey rounded dark:bg-darkSecondary dark:text-white dark:placeholder-white ${
-              messageValid ? "focus:outline-link" : "focus:outline-red"
-            } ${messageValid ? "" : "border-2 border-red"}`}
+            className={`block h-28 w-full rounded border border-darkGrey px-2 py-3 font-silkscreen text-sm font-medium text-black placeholder-black dark:bg-darkSecondary dark:text-white dark:placeholder-white`}
           />
-          {!messageValid && (
-            <p className="-mb-1 text-red text-[10px] font-semibold">Message needs to be 5-250 characters.</p>
-          )}
+          {!messageValid && <p className="-mb-1 pt-1 text-xs font-bold text-red">Message needs to be 5-250 characters.</p>}
         </div>
         <button
-          className="py-3 px-2 text-xs text-white font-silkscreen font-bold tracking-wider bg-link border border-link rounded cursor-pointer disabled:bg-darkGrey disabled:border-darkGrey disabled:cursor-not-allowed"
+          className="cursor-pointer rounded border border-link bg-link px-2 py-3 font-silkscreen text-xs font-bold tracking-wider text-white disabled:cursor-not-allowed disabled:border-darkGrey disabled:bg-darkGrey"
           disabled={!formValid}
         >
           SEND
