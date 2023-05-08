@@ -10,31 +10,27 @@ export default function Projects() {
 
   return (
     <MaxWidth width="max-w-screen-md">
-      <h1 className="py-6 text-center text-4xl tracking-widest font-silkscreen">PROSJEKTER</h1>
+      <h1 className="py-6 text-center font-silkscreen text-4xl tracking-widest">PROSJEKTER</h1>
       <SlideShow />
-      <ul className="my-4 flex flex-col gap-4 sm:grid sm:auto-cols-fr">
+      <ul className="my-6 flex flex-col gap-4 sm:grid sm:auto-cols-fr">
         {projects.map((el, index) => {
           const colSpan = (index + 1) % 3 === 0 ? "col-span-2" : "col-span-1";
-
           return (
-            <li key={el.id} className={`${colSpan} shadow-github rounded cursor-pointer`}>
-              <a href={el.link} target="_blank" rel="noreferrer" className="p-3 flex flex-col gap-2">
+            <li key={el.id} className={`${colSpan} cursor-pointer rounded shadow-github`}>
+              <a href={el.link} target="_blank" rel="noreferrer" className="flex flex-col gap-2 p-3">
                 <div className="flex justify-between">
-                  <div className="flex justify-center items-center gap-2">
+                  <div className="flex items-center justify-center gap-2">
                     <IconRepository width="15px" />
-                    <h2 className="text-sm font-bold text-link cursor-button">{el.title}</h2>
-                    <span className="py-[0.1rem] px-[0.25rem] mx-auto text-[9px] font-bold text-center border border-[#A9A9A9] rounded-full">
+                    <h2 className="cursor-button text-md font-bold text-link">{el.title}</h2>
+                    <span className="mx-auto rounded-full border border-[#A9A9A9] px-[0.25rem] py-[0.1rem] text-center text-[9px] font-bold">
                       Public
                     </span>
                   </div>
                   <IconDots width="12px" fill="#A9A9A9" />
                 </div>
-                <div className="flex gap-2 items-align">
-                  <span
-                    className={`my-auto h-[12px] w-[12px] rounded-full bg-${el.colorDot}`}
-                    style={{ backgroundColor: el.colorDot }}
-                  ></span>
-                  <p className="text-[11px]">{el.text}</p>
+                <div className="items-align flex gap-2">
+                  <span className={`my-auto h-[12px] w-[12px] rounded-full bg-${el.colorDot}`} style={{ backgroundColor: el.colorDot }}></span>
+                  <p className="text-xs">{el.text}</p>
                 </div>
               </a>
             </li>
