@@ -34,29 +34,29 @@ export default function NavDesktop() {
           </Link>
         ))}
         <div onMouseLeave={() => setDropdownOpen(false)} className="relative">
-          <button onMouseEnter={() => setDropdownOpen(true)} className="flex items-center gap-1 text-lg font-semibold">
+          <button onMouseEnter={() => setDropdownOpen(true)} className="flex items-center text-lg font-semibold">
             sandbox
-            <IconArrowDown height={15} width={15} />
+            <IconArrowDown height={15} width={15} className="stroke-black dark:stroke-white" />
           </button>
           {dropdownOpen && (
             <ul className="absolute flex flex-col rounded py-1 shadow">
               <Link
                 href="/react"
-                className="dark:hover:bg-gray-600 flex items-center gap-2 bg-white px-8 py-2 text-sm hover:bg-lightGrey dark:bg-darkBg dark:text-white"
+                className="flex items-center gap-2 bg-white px-8 py-2 text-sm font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
               >
                 <IconReact />
                 <h3>React</h3>
               </Link>
               <a
                 href="/"
-                className="dark:hover:bg-gray-600 flex items-center gap-2 bg-white px-8 py-2 text-sm hover:bg-lightGrey dark:bg-darkBg dark:text-white"
+                className="flex items-center gap-2 bg-white px-8 py-2 text-sm hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
               >
                 <IconSvelte />
                 <h3>Svelte</h3>
               </a>
               <a
                 href="/"
-                className="dark:hover:bg-gray-600 flex items-center gap-2 bg-white px-8 py-2 text-sm hover:bg-lightGrey dark:bg-darkBg dark:text-white"
+                className="flex items-center gap-2 bg-white px-8 py-2 text-sm hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
               >
                 <IconVue className="block" />
                 <h3>Vue</h3>
