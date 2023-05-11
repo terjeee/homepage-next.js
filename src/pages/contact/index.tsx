@@ -9,7 +9,7 @@ export default function Contact() {
   const [emailValid, setEmailValid] = useState<boolean | undefined>(undefined);
   const [messageValid, setMessageValid] = useState<boolean | undefined>(undefined);
   const formData = useRef<HTMLFormElement>(null);
-  const formValid = email.length > 0 && regexEmail.test(email) && message.length > 5 && message.length < 250;
+  const formValid = email.length > 0 && regexEmail.test(email) && message.length >= 5 && message.length < 250;
 
   useEffect(() => {
     setEmailValid(true);
@@ -31,7 +31,7 @@ export default function Contact() {
     event.preventDefault();
     if (formData.current) {
       emailjs.sendForm("service_contactForm", "template_70fzocf", formData.current, process.env.NEXT_PUBLIC_EMAILJS_KEY).then(
-        (result) => {
+        () => {
           setEmail("");
           setMessage("");
         },
@@ -57,25 +57,25 @@ export default function Contact() {
             spellCheck={false}
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            className={`w-full rounded border border-darkGrey px-2 py-3 font-silkscreen text-sm font-medium text-black placeholder-black dark:bg-darkSecondary dark:text-white dark:placeholder-white
+            className={`w-full rounded border border-darkGrey px-2 py-3 font-silkscreen text-sm font-medium text-black placeholder-orange dark:bg-darkSecondary dark:text-white dark:placeholder-orange
             `}
           />
-          {!emailValid && <p className="-mb-1 pt-1 text-xs font-semibold text-red">Please enter a valid email.</p>}
+          {!emailValid && <p className="-mb-1 pt-1 text-[13px] font-bold text-red dark:font-semibold">Please enter a valid email.</p>}
         </div>
         <div>
           <textarea
             name="formMsg"
             id="formMsg"
-            placeholder="Message"
+            placeholder="Message.."
             spellCheck={false}
             value={message}
             onChange={(event) => setMessage(event.target.value)}
-            className={`block h-28 w-full rounded border border-darkGrey px-2 py-3 font-silkscreen text-sm font-medium text-black placeholder-black dark:bg-darkSecondary dark:text-white dark:placeholder-white`}
+            className={`block h-28 w-full resize-none rounded border border-darkGrey px-2  py-3 font-silkscreen text-sm font-medium text-black placeholder-orange dark:bg-darkSecondary dark:text-white dark:placeholder-orange`}
           />
-          {!messageValid && <p className="-mb-1 pt-1 text-xs font-bold text-red">Message needs to be 5-250 characters.</p>}
+          {!messageValid && <p className="-mb-1 pt-1 text-[13px] font-bold text-red dark:font-semibold">Message needs to be 5-250 characters.</p>}
         </div>
         <button
-          className="cursor-pointer rounded border border-link bg-link px-2 py-3 font-silkscreen text-xs font-bold tracking-wider text-white disabled:cursor-not-allowed disabled:border-darkGrey disabled:bg-darkGrey"
+          className="cursor-pointer rounded border border-link bg-link px-2 py-3 font-silkscreen text-sm font-bold text-white disabled:cursor-not-allowed disabled:border-darkGrey disabled:bg-darkGrey"
           disabled={!formValid}
         >
           SEND
