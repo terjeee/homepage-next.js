@@ -30,7 +30,7 @@ export default function Contact() {
   function sendEmail(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (formData.current) {
-      emailjs.sendForm("service_contactForm", "template_70fzocf", formData.current, process.env.NEXT_PUBLIC_EMAILJS_KEY).then(
+      emailjs.sendForm("service_contactForm", "template_70fzocf", formData.current, "6hbDSK_0uSjg0vdP5").then(
         () => {
           setEmail("");
           setMessage("");
