@@ -2,14 +2,13 @@ import { PROJECTS } from "@/assets/projects";
 
 import IconDots from "@/components/svg/misc/IconDots";
 import IconRepository from "@/components/svg/misc/IconRepository";
-import MaxWidth from "@/components/misc/MaxWidth";
 import SlideShow from "@/components/misc/SlideShow";
 
 export default function Projects() {
   const projects = [...PROJECTS].reverse();
 
   return (
-    <MaxWidth width="max-w-screen-md">
+    <section>
       <h1 className="py-6 text-center font-silkscreen text-4xl tracking-widest">PROSJEKTER</h1>
       <SlideShow />
       <ul className="my-6 flex flex-col gap-5 sm:grid sm:auto-cols-fr">
@@ -37,6 +36,6 @@ export default function Projects() {
           );
         })}
       </ul>
-    </MaxWidth>
+    </section>
   );
 }
