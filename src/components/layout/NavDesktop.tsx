@@ -48,19 +48,19 @@ export default function NavDesktop() {
                 <h3>React</h3>
               </Link>
               <a
-                href="/"
+                href="https://svelte-sandbox-tau.vercel.app/"
                 className="flex items-center gap-2 bg-white px-8 py-2 text-sm hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
               >
                 <IconSvelte />
                 <h3>Svelte</h3>
               </a>
-              <a
+              {/* <a
                 href="/"
                 className="flex items-center gap-2 bg-white px-8 py-2 text-sm hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
               >
                 <IconVue className="block" />
                 <h3>Vue</h3>
-              </a>
+              </a> */}
             </ul>
           )}
         </div>
