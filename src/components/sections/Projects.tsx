@@ -8,15 +8,15 @@ export default function Projects() {
   const projects = [...PROJECTS].reverse();
 
   return (
-    <section>
+    <section className="pt-2">
       <h1 className="py-6 text-center font-silkscreen text-4xl tracking-widest">PROSJEKTER</h1>
       <SlideShow />
       <ul className="my-6 flex flex-col gap-5 sm:grid sm:auto-cols-fr">
         {projects.map((el, index) => {
           const colSpan = (index + 1) % 3 === 0 ? "col-span-2" : "col-span-1";
           return (
-            <li key={el.id} className={`${colSpan} cursor-pointer rounded shadow-github`}>
-              <a href={el.link} target="_blank" rel="noreferrer" className="flex flex-col gap-2 p-4">
+            <li key={el.id} className={`${colSpan} cursor-pointer rounded-md shadow-github`}>
+              <a href={el.link} target="_blank" rel="noreferrer" className="flex flex-col gap-2 px-4 py-3">
                 <div className="flex justify-between">
                   <div className="flex items-center justify-center gap-2">
                     <IconRepository width="15px" />
@@ -28,7 +28,10 @@ export default function Projects() {
                   <IconDots width="12px" fill="#A9A9A9" />
                 </div>
                 <div className="items-align flex gap-2">
-                  <span className={`my-auto h-[12px] w-[12px] rounded-full bg-${el.colorDot}`} style={{ backgroundColor: el.colorDot }}></span>
+                  <span
+                    className={`my-auto h-[12px] w-[12px] rounded-full bg-${el.colorDot}`}
+                    style={{ backgroundColor: el.colorDot }}
+                  ></span>
                   <p className="text-xs">{el.text}</p>
                 </div>
               </a>
