@@ -40,13 +40,6 @@ export default function NavDesktop() {
           </button>
           {dropdownOpen && (
             <ul className="absolute flex flex-col rounded py-1 shadow">
-              <Link
-                href="/sandbox-react"
-                className="flex items-center gap-2 bg-white px-8 py-2 text-sm font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
-              >
-                <IconReact />
-                <h3>React</h3>
-              </Link>
               <a
                 href="https://svelte-sandbox-tau.vercel.app/"
                 target="_blank"
@@ -55,6 +48,13 @@ export default function NavDesktop() {
                 <IconSvelte />
                 <h3>Svelte</h3>
               </a>
+              <Link
+                href="/sandbox-react"
+                className="flex items-center gap-2 bg-white px-8 py-2 text-sm font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
+              >
+                <IconReact />
+                <h3>React</h3>
+              </Link>
               {/* <a
                 href="/"
                 className="flex items-center gap-2 bg-white px-8 py-2 text-sm hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
