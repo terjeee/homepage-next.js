@@ -48,13 +48,13 @@ export default function NavDesktop() {
                 <IconSvelte />
                 <h3>Svelte</h3>
               </a>
-              <Link
+              {/* <Link
                 href="/sandbox-react"
                 className="flex items-center gap-2 bg-white px-8 py-2 text-sm font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
               >
                 <IconReact />
                 <h3>React</h3>
-              </Link>
+              </Link> */}
               {/* <a
                 href="/"
                 className="flex items-center gap-2 bg-white px-8 py-2 text-sm hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
