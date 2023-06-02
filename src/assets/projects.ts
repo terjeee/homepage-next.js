@@ -1,12 +1,12 @@
 export const PROJECTS = [
-  {
-    id: 1,
-    link: "https://terjeee.github.io/2022-08-21-bank-landing-page/",
-    linkRepo: "https://github.com/terjeee/2022-08-21-bank-landing-page",
-    title: "EasyBank - Landing Page",
-    colorDot: "#F1E05A",
-    text: "React, React Router",
-  },
+  // {
+  //   id: 1,
+  //   link: "https://terjeee.github.io/2022-08-21-bank-landing-page/",
+  //   linkRepo: "https://github.com/terjeee/2022-08-21-bank-landing-page",
+  //   title: "EasyBank - Landing Page",
+  //   colorDot: "#F1E05A",
+  //   text: "React, React Router",
+  // },
   {
     id: 2,
     link: "https://terjeee.github.io/2022.05.27-Advice-Generator/",
