@@ -25,19 +25,19 @@ export const PROJECTS = [
   },
   {
     id: 4,
-    link: "https://terjeee.github.io/2022-08-14-ip-address-tracker/",
-    linkRepo: "https://github.com/terjeee/2022-08-14-ip-address-tracker",
-    title: "IP Address Tracker",
-    colorDot: "#F1E05A",
-    text: "React, API",
-  },
-  {
-    id: 5,
     link: "https://svelte-test-mauve.vercel.app/",
     linkRepo: "https://github.com/terjeee/svelte-test",
     colorDot: "#FF3E00",
     title: "Landing page",
     text: "SvelteKit, Tailwind, Typescript",
+  },
+  {
+    id: 5,
+    link: "https://terjeee.github.io/2022-08-14-ip-address-tracker/",
+    linkRepo: "https://github.com/terjeee/2022-08-14-ip-address-tracker",
+    title: "IP Address Tracker",
+    colorDot: "#F1E05A",
+    text: "React, API",
   },
   {
     id: 6,
@@ -49,14 +49,6 @@ export const PROJECTS = [
   },
   {
     id: 7,
-    link: "https://terjeee.github.io/to-do/",
-    linkRepo: "https://github.com/terjeee/to-to/",
-    colorDot: "#3178c6",
-    title: "To-do List",
-    text: "React, Typescript, Redux, SCSS",
-  },
-  {
-    id: 8,
     link: "https://terjeee.github.io/url-shorten/",
     linkRepo: "https://github.com/terjeee/url-shorten",
     colorDot: "#41B883",
@@ -64,11 +56,28 @@ export const PROJECTS = [
     text: "Vue, Typescript",
   },
   {
+    id: 8,
+    link: "https://terjeee.github.io/to-do/",
+    linkRepo: "https://github.com/terjeee/to-to/",
+    colorDot: "#3178c6",
+    title: "To-do List",
+    text: "React, Typescript, Redux, SCSS",
+  },
+
+  {
     id: 9,
     link: "https://terjeee.github.io/2022-09-04-rest-countries-api/",
     linkRepo: "https://github.com/terjeee/2022-09-04-rest-countries-api",
     colorDot: "#F1E05A",
     title: "Countries API",
     text: "React, React Router, SCSS",
+  },
+  {
+    id: 10,
+    link: "https://svelte-sandbox-tau.vercel.app/",
+    linkRepo: "https://github.com/terjeee/svelte-sandbox",
+    colorDot: "#FF3E00",
+    title: "Svelte Sandbox",
+    text: "Svelte, Typescript, D3, MapLibre",
   },
 ];
