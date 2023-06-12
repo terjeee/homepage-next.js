@@ -1,5 +1,7 @@
 import { PROJECTS } from "@/assets/projects";
 
+import { motion, animate, stagger } from "framer-motion";
+
 import IconDots from "@/components/svg/misc/IconDots";
 import IconRepository from "@/components/svg/misc/IconRepository";
 import SlideShow from "@/components/misc/SlideShow";
@@ -9,13 +11,27 @@ export default function Projects() {
 
   return (
     <section className="pt-2">
-      <h1 className="py-6 text-center font-silkscreen text-4xl tracking-widest">PROSJEKTER</h1>
+      <motion.h1
+        initial={{ opacity: 0, translateX: 0 }}
+        animate={{ opacity: 1, translateX: 0 }}
+        transition={{ duration: 0.5 }}
+        className="py-6 text-center font-silkscreen text-4xl tracking-widest"
+      >
+        PROSJEKTER
+      </motion.h1>
       <SlideShow />
       <ul className="my-6 flex flex-col gap-5 sm:grid sm:auto-cols-fr">
         {projects.map((el, index) => {
           const colSpan = (index + 1) % 3 === 0 ? "col-span-2" : "col-span-1";
           return (
-            <li key={el.id} className={`${colSpan} cursor-pointer rounded-md shadow-github`}>
+            // hvis listen fetches bruk {projects.length > 0  && <motion.li />} for ikke å kjøre for tidlig
+            <motion.li
+              key={el.id}
+              initial={{ opacity: 0, translateY: -25 }}
+              animate={{ opacity: 1, translateY: 0 }}
+              transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
+              className={`${colSpan} cursor-pointer rounded-md shadow-github`}
+            >
               <a href={el.link} target="_blank" rel="noreferrer" className="flex flex-col gap-2 px-4 py-3">
                 <div className="flex justify-between">
                   <div className="flex items-center justify-center gap-2">
@@ -35,7 +51,7 @@ export default function Projects() {
                   <p className="text-xs">{el.text}</p>
                 </div>
               </a>
-            </li>
+            </motion.li>
           );
         })}
       </ul>
