@@ -6,7 +6,7 @@ import Login from "@/components/misc/Login";
 import SwitchDarkLight from "@/components/misc/SwitchDarkLight";
 import IconReact from "@/components/svg/technologies/IconReact";
 import IconSvelte from "@/components/svg/technologies/IconSvelte";
-import IconVue from "@/components/svg/technologies/IconVue";
+// import IconVue from "@/components/svg/technologies/IconVue";
 import IconArrowDown from "@/components/svg/misc/IconArrowDown3";
 
 const paths = [
