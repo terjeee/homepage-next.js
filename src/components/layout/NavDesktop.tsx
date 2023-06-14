@@ -49,7 +49,7 @@ export default function NavDesktop() {
                 <h3>Svelte</h3>
               </a>
               <a
-                href="/"
+                href="https://react-sandbox-kappa.vercel.app/"
                 target="_blank"
                 className="flex items-center gap-2 bg-white px-8 py-2 text-sm font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
               >
