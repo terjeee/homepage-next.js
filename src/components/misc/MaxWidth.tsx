@@ -1,7 +1,5 @@
-import type { Children } from "@/types/types";
-
 interface Props {
-  children: Children;
+  children: React.ReactNode;
   width: "max-w-screen-sm" | "max-w-screen-md" | "max-w-screen-lg" | "max-w-screen-xl";
   className?: string;
 }
