@@ -21,19 +21,21 @@ export default function NavDesktop() {
 
   return (
     <nav className="hidden items-center py-4 sm:flex sm:justify-between">
-      <div className="flex gap-3">
+      <ul className="flex gap-3">
         {paths.map(([title, path]) => (
-          <Link
-            href={path}
-            key={title}
-            className={`text-lg font-semibold dark:text-white ${
-              currentPath !== path ? "" : "underline"
-            } underline-offset-4 hover:underline dark:hover:text-white `}
-          >
-            {title}
-          </Link>
+          <li>
+            <Link
+              href={path}
+              key={title}
+              className={`text-lg font-semibold dark:text-white ${
+                currentPath !== path ? "" : "underline"
+              } underline-offset-4 hover:underline dark:hover:text-white `}
+            >
+              {title}
+            </Link>
+          </li>
         ))}
-        <div onMouseLeave={() => setDropdownOpen(false)} className="relative">
+        <li onMouseLeave={() => setDropdownOpen(false)} className="relative">
           <button onMouseEnter={() => setDropdownOpen(true)} className="flex items-center text-lg font-semibold">
             sandbox
             <IconArrowDown height={15} width={15} className="stroke-black dark:stroke-white" />
@@ -65,8 +67,8 @@ export default function NavDesktop() {
               </a> */}
             </ul>
           )}
-        </div>
-      </div>
+        </li>
+      </ul>
       <div className="flex gap-2">
         <SwitchDarkLight />
         <Login />
