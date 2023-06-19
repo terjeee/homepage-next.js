@@ -4,10 +4,7 @@ export default function useScrollLock() {
   const [isLocked, setIsLocked] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
-    // if (typeof document !== "undefined") {
-    const bodyStyle = document.body.style;
-    bodyStyle.overflowY = isLocked ? "hidden" : "auto";
-    // }
+    document.body.style.overflowY = isLocked ? "hidden" : "auto";
   }, [isLocked]);
 
   const toggleScrollLock = () => {
