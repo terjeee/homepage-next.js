@@ -1,11 +1,13 @@
+"use client";
+
 import { useState } from "react";
 import Link from "next/link";
 
 import useScrollLock from "@/utils/hooks/useScrollLock";
 
 import IconMenu from "@/components/svg/misc/IconMenu";
-import SwitchDarkLight from "@/components/misc/SwitchDarkLight";
-import Login from "@/components/misc/Login";
+import SwitchDarkLight from "@/components/UI/SwitchDarkMode";
+import Login from "@/components/UI/Login";
 import IconHome from "@/components/svg/misc/IconHome";
 import IconCode from "@/components/svg/misc/IconCode";
 import IconMail from "@/components/svg/misc/IconMail";
@@ -21,7 +23,7 @@ export default function NavMobile() {
 
   return (
     <>
-      <nav className="flex flex-col max-h-screen sm:hidden">
+      <nav className="flex max-h-screen flex-col sm:hidden">
         <div className="flex justify-between py-4">
           <button onClick={toggleMenu}>
             <IconMenu />
@@ -32,8 +34,8 @@ export default function NavMobile() {
           </div>
         </div>
         {menuOpen && (
-          <div className="h-screen mb-20">
-            <ul className="h-full flex justify-center items-center gap-10">
+          <div className="mb-20 h-screen">
+            <ul className="flex h-full items-center justify-center gap-10">
               <li>
                 <Link href="/" onClick={toggleMenu} className="flex flex-col items-center">
                   <IconHome />

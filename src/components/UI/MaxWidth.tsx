@@ -5,5 +5,5 @@ interface Props {
 }
 
 export default function MaxWidth(props: Props) {
-  return <div className={`${props.width} mx-auto ${props.className}`}>{props.children}</div>;
+  return <div className={`${props.width} mx-auto px-6 ${props.className}`}>{props.children}</div>;
 }

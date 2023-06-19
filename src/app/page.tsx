@@ -1,15 +1,13 @@
-import { Inter } from "next/font/google";
+import "@/app/globals.css";
 
 // import Header from "@/components/sections/Header";
 import Projects from "@/components/sections/Projects";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export default function Home() {
   return (
-    <>
+    <main>
       {/* <Header /> */}
       <Projects />
-    </>
+    </main>
   );
 }

@@ -1,10 +1,12 @@
-import { PROJECTS } from "@/assets/projects";
+"use client";
 
-import { motion, animate, stagger } from "framer-motion";
+import { PROJECTS } from "../../../public/projects";
+
+import { motion } from "framer-motion";
 
 import IconDots from "@/components/svg/misc/IconDots";
 import IconRepository from "@/components/svg/misc/IconRepository";
-import SlideShow from "@/components/misc/SlideShow";
+import SlideShow from "@/components/UI/SlideShow";
 
 export default function Projects() {
   const projects = [...PROJECTS].reverse();

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import IconMoon from "@/components/svg/misc/IconMoon";
 import IconSun from "@/components/svg/misc/IconSun";
 
-export default function SwitchDarkLight() {
+export default function SwitchDarkMode() {
   const [theme, setTheme] = useState<string | undefined>(undefined);
 
   function toggleTheme() {

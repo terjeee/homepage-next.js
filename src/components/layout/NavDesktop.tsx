@@ -1,13 +1,13 @@
+"use client";
+
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
-import Login from "@/components/misc/Login";
-import SwitchDarkLight from "@/components/misc/SwitchDarkLight";
+import Login from "@/components/UI/Login";
+import SwitchDarkMode from "@/components/UI/SwitchDarkMode";
 import IconReact from "@/components/svg/technologies/IconReact";
 import IconSvelte from "@/components/svg/technologies/IconSvelte";
-// import IconVue from "@/components/svg/technologies/IconVue";
-import IconArrowDown from "@/components/svg/misc/IconArrowDown3";
 
 const paths = [
   ["home", "/"],
@@ -16,17 +16,16 @@ const paths = [
 ];
 
 export default function NavDesktop() {
-  const currentPath = useRouter().pathname;
+  const currentPath = usePathname();
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
     <nav className="hidden items-center py-4 sm:flex sm:justify-between">
       <ul className="flex gap-3">
         {paths.map(([title, path]) => (
-          <li>
+          <li key={title}>
             <Link
               href={path}
-              key={title}
               className={`text-lg font-semibold dark:text-white ${
                 currentPath !== path ? "" : "underline"
               } underline-offset-4 hover:underline dark:hover:text-white `}
@@ -38,7 +37,6 @@ export default function NavDesktop() {
         <li onMouseLeave={() => setDropdownOpen(false)} className="relative">
           <button onMouseEnter={() => setDropdownOpen(true)} className="flex items-center text-lg font-semibold">
             sandbox
-            <IconArrowDown height={15} width={15} className="stroke-black dark:stroke-white" />
           </button>
           {dropdownOpen && (
             <ul className="absolute flex flex-col rounded py-1 shadow">
@@ -70,7 +68,7 @@ export default function NavDesktop() {
         </li>
       </ul>
       <div className="flex gap-2">
-        <SwitchDarkLight />
+        <SwitchDarkMode />
         <Login />
       </div>
     </nav>
