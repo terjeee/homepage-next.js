@@ -6,8 +6,8 @@ import Link from "next/link";
 import useScrollLock from "@/utils/hooks/useScrollLock";
 
 import IconMenu from "@/components/svg/misc/IconMenu";
-import SwitchDarkLight from "@/components/UI/SwitchDarkMode";
-import Login from "@/components/UI/Login";
+import SwitchDarkLight from "@/components/ui/SwitchDarkMode";
+import Login from "@/components/ui/Login";
 import IconHome from "@/components/svg/misc/IconHome";
 import IconCode from "@/components/svg/misc/IconCode";
 import IconMail from "@/components/svg/misc/IconMail";

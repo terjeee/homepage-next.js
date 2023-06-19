@@ -4,8 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import Login from "@/components/UI/Login";
-import SwitchDarkMode from "@/components/UI/SwitchDarkMode";
+import Login from "@/components/ui/Login";
+import SwitchDarkMode from "@/components/ui/SwitchDarkMode";
 import IconReact from "@/components/svg/technologies/IconReact";
 import IconSvelte from "@/components/svg/technologies/IconSvelte";
 
