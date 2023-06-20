@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { PROJECTS } from "../../../public/projects";
 import IconDots from "@/components/svg/misc/IconDots";
 import IconRepository from "@/components/svg/misc/IconRepository";
-import SlideShow from "@/components/UI/SlideShow";
+import SlideShow from "@/components/ui/SlideShow";
 
 export default function Projects() {
   const projects = [...PROJECTS].reverse();
