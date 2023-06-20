@@ -1,6 +1,6 @@
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
-import MaxWidth from "@/components/ui/MaxWidth";
+import MaxWidth from "@/components/UI/MaxWidth";
 
 interface Props {
   children: React.ReactNode;
