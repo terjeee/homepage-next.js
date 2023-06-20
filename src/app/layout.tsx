@@ -15,7 +15,7 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body className="dark:bg-darkBg dark:text-white">
-        <MaxWidth width="max-w-screen-lg">
+        <MaxWidth width="max-w-screen-md">
           <Nav />
           {children}
           <Footer />
