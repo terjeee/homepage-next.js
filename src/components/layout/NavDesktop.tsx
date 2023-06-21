@@ -39,7 +39,7 @@ export default function NavDesktop() {
             sandbox
           </button>
           {dropdownOpen && (
-            <ul className="absolute flex flex-col rounded py-1 shadow">
+            <ul className=" absolute flex flex-col rounded bg-white py-1 shadow dark:bg-darkBg">
               <a
                 href="https://svelte-sandbox-tau.vercel.app/"
                 target="_blank"
