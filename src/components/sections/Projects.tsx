@@ -42,7 +42,7 @@ export default function Projects() {
                       Public
                     </span>
                   </div>
-                  <IconDots width="12px" fill="#A9A9A9" />
+                  {/* <IconDots width="12px" fill="#A9A9A9" /> */}
                 </div>
                 <div className="items-align flex gap-2">
                   <span
