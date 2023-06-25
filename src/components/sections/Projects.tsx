@@ -12,14 +12,7 @@ export default function Projects() {
 
   return (
     <section className="pt-2">
-      <motion.h1
-        initial={{ opacity: 0, translateX: 0 }}
-        animate={{ opacity: 1, translateX: 0 }}
-        transition={{ duration: 0.5 }}
-        className="py-6 text-center font-silkscreen text-4xl tracking-widest"
-      >
-        PROSJEKTER
-      </motion.h1>
+      <h1 className="py-6 text-center font-silkscreen text-4xl tracking-widest">PROSJEKTER</h1>
       <SlideShow />
       <ul className="my-6 flex flex-col gap-5 sm:grid sm:auto-cols-fr">
         {projects.map((el, index) => {
@@ -30,7 +23,7 @@ export default function Projects() {
               key={el.id}
               initial={{ opacity: 0, translateY: -25 }}
               animate={{ opacity: 1, translateY: 0 }}
-              transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
+              transition={{ duration: 0.5, delay: 0.1 * index }}
               className={`${colSpan} cursor-pointer rounded-md shadow-github`}
             >
               <a href={el.link} target="_blank" rel="noreferrer" className="flex flex-col gap-2 px-4 py-3">
