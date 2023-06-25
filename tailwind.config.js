@@ -15,7 +15,7 @@ module.exports = {
       blue: "#0969da",
       red: "#FF1B1C",
       purple: "#DC6BAD",
-      orange: "#FFA400",
+      orange: "#FF9000",
       link: "#0969da",
       darkBg: "#121212",
       darkSecondary: "#282828",
