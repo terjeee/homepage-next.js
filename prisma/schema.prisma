@@ -7,6 +7,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// TODO: fiks db.url fra .env til .env.local :)
+
 model User {
   id                 String     @id @default(auto()) @map("_id") @db.ObjectId
   name               String?

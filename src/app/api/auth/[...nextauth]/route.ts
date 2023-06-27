@@ -24,4 +24,8 @@ const handler = NextAuth({
   debug: false,
 });
 
+// TODO: provider -> credentials
+// TODO: provider -> ??
+// TODO: options
+
 export { handler as GET, handler as POST };
