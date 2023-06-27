@@ -6,7 +6,7 @@ import GoogleProvider from "next-auth/providers/google";
 const prismaClient = new PrismaClient();
 
 const handler = NextAuth({
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.SECRET,
   adapter: PrismaAdapter(prismaClient),
   providers: [
     GoogleProvider({
@@ -22,7 +22,7 @@ const handler = NextAuth({
   //   verifyRequest: "/auth/verify-request", // (used for check email message)
   //   newUser: "/auth/new-user", // New users will be directed here on first sign in (leave the property out if not of interest)
   // },
-  debug: true,
+  debug: false,
 });
 
 // TODO: provider -> credentials
