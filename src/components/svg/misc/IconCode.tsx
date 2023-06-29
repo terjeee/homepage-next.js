@@ -3,9 +3,9 @@ import { SVGProps } from "react";
 export default function IconCode(props: SVGProps<SVGSVGElement>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={25} height={25} fill="none" viewBox="0 0 24 24" {...props}>
-      <path stroke="#323232" strokeLinecap="round" strokeWidth={2} d="m11 16 2-8" />
+      <path strokeLinecap="round" strokeWidth={2} d="m11 16 2-8" className="stroke-black dark:stroke-white" />
       <path
-        stroke="#323232"
+        className="stroke-black dark:stroke-white"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
