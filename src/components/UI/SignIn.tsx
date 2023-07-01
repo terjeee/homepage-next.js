@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Login() {
+export default function SignIn() {
   return (
     <Link
       href="/api/auth/signin"
