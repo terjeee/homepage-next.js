@@ -4,8 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import Login from "@/components/UI/Login";
-import SwitchDarkMode from "@/components/UI/SwitchDarkMode";
 import IconReact from "@/components/svg/technologies/IconReact";
 import IconSvelte from "@/components/svg/technologies/IconSvelte";
 
@@ -20,7 +18,7 @@ export default function NavDesktop() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <nav className="hidden items-center py-4 sm:flex sm:justify-between">
+    <div className="hidden items-center py-4 sm:flex">
       <ul className="flex gap-3">
         {paths.map(([title, path]) => (
           <li key={title}>
@@ -67,10 +65,6 @@ export default function NavDesktop() {
           )}
         </li>
       </ul>
-      <div className="flex gap-2">
-        <SwitchDarkMode />
-        <Login />
-      </div>
-    </nav>
+    </div>
   );
 }
