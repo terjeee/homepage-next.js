@@ -24,13 +24,15 @@ export default function Projects() {
               initial={{ opacity: 0, translateY: -25 }}
               animate={{ opacity: 1, translateY: 0 }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
-              className={`${colSpan} cursor-pointer rounded-md shadow-github`}
+              className={`${colSpan} group cursor-pointer rounded-md shadow-github`}
             >
               <a href={el.link} target="_blank" rel="noreferrer" className="flex flex-col gap-2 px-4 py-3">
                 <div className="flex justify-between">
                   <div className="flex items-center justify-center gap-2">
                     <IconRepository width="15px" />
-                    <h2 className="cursor-button text-md font-bold text-link md:text-lg">{el.title}</h2>
+                    <h2 className=" cursor-button text-md font-bold text-link group-hover:underline md:text-lg">
+                      {el.title}
+                    </h2>
                     <span className="mx-auto rounded-full border border-[#A9A9A9] px-[0.25rem] py-[0.1rem] text-center text-[9px] font-bold">
                       Public
                     </span>
