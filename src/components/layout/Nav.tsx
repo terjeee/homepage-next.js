@@ -1,7 +1,7 @@
-import NavMobile from "./NavMobile";
-import NavDesktop from "./NavDesktop";
-import SwitchDarkMode from "../UI/SwitchDarkMode";
-import SignIn from "../UI/SignIn";
+import NavMobile from "@/components/layout/NavMobile";
+import NavDesktop from "@/components/layout/NavDesktop";
+import SwitchDarkMode from "@/components/UI/SwitchDarkMode";
+import SignIn from "@/components/UI/SignIn/SignIn";
 
 export default function Nav() {
   return (
