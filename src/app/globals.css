@@ -8,3 +8,8 @@
 html {
   font-family: "Quicksand", sans-serif;
 }
+
+*:focus {
+  outline: 1px solid #0969da;
+  border-radius: 2.5px;
+}
