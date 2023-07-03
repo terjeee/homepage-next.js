@@ -27,16 +27,13 @@ export default function NavMobile() {
     <>
       <div className="flex max-h-screen flex-col sm:hidden">
         <div className="my-auto flex justify-between">
-          <button onClick={toggleMenu}>
+          <button className="z-50" onClick={toggleMenu}>
             <IconMenu />
           </button>
         </div>
         {menuOpen && (
-          <div className="z-50">
+          <div className="z-40">
             <div className="absolute inset-x-0 inset-y-0 h-screen bg-white dark:bg-darkBg">
-              <button onClick={toggleMenu} className="pl-6 pt-6">
-                <IconMenu />
-              </button>
               <ul className="flex h-full items-center justify-center gap-10 pb-32">
                 <li>
                   <Link href="/" onClick={toggleMenu} className="flex flex-col items-center">
