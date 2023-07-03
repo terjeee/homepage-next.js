@@ -19,12 +19,12 @@ export default function NavDesktop() {
 
   return (
     <div className="hidden items-center py-4 sm:flex">
-      <ul className="flex">
+      <ul className="flex gap-1">
         {paths.map(([title, path]) => (
           <li key={title}>
             <Link
               href={path}
-              className={`rounded-md px-3 py-2 text-lg font-semibold dark:text-white ${
+              className={`rounded-md px-2 py-1 text-lg font-semibold dark:text-white ${
                 currentPath !== path ? "" : "underline"
               } underline-offset-4 hover:bg-lightGrey dark:hover:bg-darkSecondary dark:hover:text-white `}
             >
