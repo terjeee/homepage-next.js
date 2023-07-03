@@ -4,6 +4,7 @@ import { useSession, signOut } from "next-auth/react";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function SignIn() {
   const { data: session, status } = useSession();
@@ -43,7 +44,12 @@ export default function SignIn() {
           <Image src={session.user?.image!} height={40} width={40} alt="profilbilde" className="rounded-full" />
         </button>
         {showDropdown && (
-          <div className="dark:bg-darkBgrounded align-center absolute left-auto right-0 w-24 rounded-md bg-white shadow dark:bg-darkBg">
+          <motion.div
+            initial={{ opacity: 0, translateY: -10 }}
+            animate={{ opacity: 1, translateY: 0 }}
+            transition={{ duration: 0.1 }}
+            className="dark:bg-darkBgrounded align-center absolute left-auto right-0 w-24 rounded-md bg-white shadow dark:bg-darkBg"
+          >
             <ul>
               <li className="bg-whitetext-sm rounded-md font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary">
                 <button onClick={() => signOut()} className="w-full py-2 text-sm font-semibold">
@@ -51,7 +57,7 @@ export default function SignIn() {
                 </button>
               </li>
             </ul>
-          </div>
+          </motion.div>
         )}
       </div>
     );

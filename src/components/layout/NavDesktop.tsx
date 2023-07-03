@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 
 import IconReact from "@/components/svg/technologies/IconReact";
 import IconSvelte from "@/components/svg/technologies/IconSvelte";
@@ -36,7 +37,12 @@ export default function NavDesktop() {
             sandbox
           </button>
           {showDropdown && (
-            <ul className="absolute flex flex-col rounded bg-white py-1 shadow dark:bg-darkBg">
+            <motion.ul
+              initial={{ opacity: 0, translateY: -10 }}
+              animate={{ opacity: 1, translateY: 0 }}
+              transition={{ duration: 0.1 }}
+              className="absolute flex flex-col rounded bg-white py-1 shadow dark:bg-darkBg"
+            >
               <li>
                 <a
                   href="https://svelte-sandbox-tau.vercel.app/"
@@ -66,7 +72,7 @@ export default function NavDesktop() {
                   <h3>Vue</h3>
                 </a>
               </li> */}
-            </ul>
+            </motion.ul>
           )}
         </li>
       </ul>
