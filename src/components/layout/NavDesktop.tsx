@@ -19,48 +19,54 @@ export default function NavDesktop() {
 
   return (
     <div className="hidden items-center py-4 sm:flex">
-      <ul className="flex gap-3">
+      <ul className="flex gap-1">
         {paths.map(([title, path]) => (
           <li key={title}>
             <Link
               href={path}
-              className={`text-lg font-semibold dark:text-white ${
+              className={`rounded-md px-2 py-1 text-lg font-semibold dark:text-white ${
                 currentPath !== path ? "" : "underline"
-              } underline-offset-4 hover:underline dark:hover:text-white `}
+              } underline-offset-4 hover:bg-lightGrey dark:hover:text-white `}
             >
               {title}
             </Link>
           </li>
         ))}
         <li onMouseLeave={() => setDropdownOpen(false)} className="relative">
-          <button onMouseEnter={() => setDropdownOpen(true)} className="flex items-center text-lg font-semibold">
+          <button onMouseEnter={() => setDropdownOpen(true)} className="flex items-center px-2 text-lg font-semibold">
             sandbox
           </button>
           {dropdownOpen && (
-            <ul className=" absolute flex flex-col rounded bg-white py-1 shadow dark:bg-darkBg">
-              <a
-                href="https://svelte-sandbox-tau.vercel.app/"
-                target="_blank"
-                className="flex items-center gap-2 bg-white px-8 py-2 text-sm font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
-              >
-                <IconSvelte />
-                <h3>Svelte</h3>
-              </a>
-              <a
-                href="https://react-sandbox-kappa.vercel.app/"
-                target="_blank"
-                className="flex items-center gap-2 bg-white px-8 py-2 text-sm font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
-              >
-                <IconReact />
-                <h3>React</h3>
-              </a>
-              {/* <a
-                href="/"
-                className="flex items-center gap-2 bg-white px-8 py-2 text-sm hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
-              >
-                <IconVue className="block" />
-                <h3>Vue</h3>
-              </a> */}
+            <ul className="absolute flex flex-col rounded bg-white py-1 shadow dark:bg-darkBg">
+              <li>
+                <a
+                  href="https://svelte-sandbox-tau.vercel.app/"
+                  target="_blank"
+                  className="flex items-center gap-2 bg-white px-8 py-2 text-sm font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
+                >
+                  <IconSvelte />
+                  <h3>Svelte</h3>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://react-sandbox-kappa.vercel.app/"
+                  target="_blank"
+                  className="flex items-center gap-2 bg-white px-8 py-2 text-sm font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
+                >
+                  <IconReact />
+                  <h3>React</h3>
+                </a>
+              </li>
+              {/* <li>
+                <a
+                  href="/"
+                  className="flex items-center gap-2 bg-white px-8 py-2 text-sm hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
+                >
+                  <IconVue className="block" />
+                  <h3>Vue</h3>
+                </a>
+              </li> */}
             </ul>
           )}
         </li>
