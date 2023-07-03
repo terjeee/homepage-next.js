@@ -1,29 +1,59 @@
 "use client";
 
 import { useSession, signOut } from "next-auth/react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function SignIn() {
   const { data: session, status } = useSession();
   const [showDropdown, setShowDropdown] = useState(false);
+  const refMenu = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (refMenu.current && !refMenu.current.contains(event.target as Node)) {
+        setShowDropdown(false);
+      }
+    };
+
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setShowDropdown(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscapeKey);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscapeKey);
+    };
+  }, []);
 
   if (status === "loading") return <></>;
   if (status === "authenticated")
     return (
-      <button className="relative my-auto cursor-pointer" onClick={() => setShowDropdown((prevState) => !prevState)}>
-        <Image src={session.user?.image!} height={40} width={40} alt="profilbilde" className="rounded-full" />
+      <div ref={refMenu} className="relative my-auto">
+        <button
+          className="cursor-pointer rounded-full focus:outline-link"
+          onClick={() => setShowDropdown((prevState) => !prevState)}
+        >
+          <Image src={session.user?.image!} height={40} width={40} alt="profilbilde" className="rounded-full" />
+        </button>
         {showDropdown && (
-          <div className="dark:bg-darkBgrounded absolute left-auto right-0 z-20 mt-2 flex w-20 flex-col rounded-md bg-white shadow dark:bg-darkBg">
+          <div className="dark:bg-darkBgrounded align-center absolute left-auto right-0 w-24 rounded-md bg-white shadow dark:bg-darkBg">
             <ul>
-              <li className="font-md rounded-md bg-white px-2 py-2 text-sm font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary">
-                <button onClick={() => signOut()}>Sign Out</button>
+              <li className="bg-whitetext-sm rounded-md font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary">
+                <button onClick={() => signOut()} className="w-full py-2 text-sm font-semibold">
+                  Sign Out
+                </button>
               </li>
             </ul>
           </div>
         )}
-      </button>
+      </div>
     );
 
   return (

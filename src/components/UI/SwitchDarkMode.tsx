@@ -30,7 +30,7 @@ export default function SwitchDarkMode() {
   }, [theme]);
 
   return (
-    <motion.button onClick={toggleTheme} whileHover={{ scale: 1.1 }}>
+    <motion.button onClick={toggleTheme} whileHover={{ scale: 1.1 }} className="my-auto">
       {theme === "light" && <IconMoon width="20" />}
       {theme === "dark" && <IconSun width="20" />}
     </motion.button>
