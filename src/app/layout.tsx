@@ -1,3 +1,5 @@
+import "@/app/globals.css";
+
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import MaxWidth from "@/components/UI/MaxWidth";
