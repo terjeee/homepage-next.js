@@ -38,7 +38,7 @@ export default function SignIn() {
     return (
       <div ref={refMenu} className="relative my-auto">
         <button
-          className="cursor-pointer rounded-full focus:outline-link"
+          className="block cursor-pointer rounded-full focus:outline-link"
           onClick={() => setShowDropdown((prevState) => !prevState)}
         >
           <Image src={session.user?.image!} height={40} width={40} alt="profilbilde" className="rounded-full" />
