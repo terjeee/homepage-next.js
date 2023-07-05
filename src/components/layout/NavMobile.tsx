@@ -34,65 +34,64 @@ export default function NavMobile() {
         {menuOpen && (
           <div className="z-40">
             <div className="absolute inset-x-0 inset-y-0 h-screen bg-white dark:bg-darkBg">
-              <ul className="flex h-full items-center justify-center gap-10 pb-32">
-                <li>
-                  <Link href="/" onClick={toggleMenu} className="flex flex-col items-center">
-                    <IconHome />
-                    <h2 className="text-lg font-medium">home</h2>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" onClick={toggleMenu} className="flex flex-col items-center">
-                    <IconMail />
-                    <h2 className="text-lg font-medium">contact</h2>
-                  </Link>
-                </li>
-                <li className="relative">
-                  <button
-                    onClick={() => toggleSandboxOpen((prevState) => !prevState)}
-                    className="flex flex-col items-center"
-                  >
-                    <IconCode />
-                    <h2 className="text-lg font-medium">sandbox</h2>
-                  </button>
-                  {sandboxOpen && (
-                    <ul className="absolute w-full py-1">
-                      <motion.li
-                        initial={{ opacity: 0, translateY: -25 }}
-                        animate={{ opacity: 1, translateY: 0 }}
-                        transition={{ duration: 0.5, delay: 0.1 * 1 }}
-                        onClick={toggleMenu}
-                        className="flex justify-center"
-                      >
-                        <a
-                          href="https://svelte-sandbox-tau.vercel.app/"
-                          target="_blank"
-                          className="flex items-center gap-1 bg-white py-2 text-sm font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
+              <div className="flex h-full items-center justify-center">
+                <ul className="flex flex-col pb-28">
+                  <li className="py-3">
+                    <Link href="/" onClick={toggleMenu} className="flex items-center gap-2">
+                      <IconHome />
+                      <h2 className="font- text-lg font-semibold tracking-wider">home</h2>
+                    </Link>
+                  </li>
+                  <li className="py-3">
+                    <Link href="/contact" onClick={toggleMenu} className="flex items-center gap-2">
+                      <IconMail />
+                      <h2 className="font- text-lg font-semibold tracking-wider">contact</h2>
+                    </Link>
+                  </li>
+                  <li className="relative py-3">
+                    <button onClick={() => toggleSandboxOpen((prevState) => !prevState)} className="flex items-center gap-2">
+                      <IconCode className="pt-[0.5px]" />
+                      <h2 className="font- text-lg font-semibold tracking-wider">sandbox</h2>
+                    </button>
+                    {sandboxOpen && (
+                      <ul className="absolute w-full py-1">
+                        <motion.li
+                          initial={{ opacity: 0, translateY: -10 }}
+                          animate={{ opacity: 1, translateY: 0 }}
+                          transition={{ duration: 0.2 }}
+                          onClick={toggleMenu}
+                          className="flex justify-center"
                         >
-                          <IconSvelte />
-                          <h3>Svelte</h3>
-                        </a>
-                      </motion.li>
-                      <motion.li
-                        initial={{ opacity: 0, translateY: -25 }}
-                        animate={{ opacity: 1, translateY: 0 }}
-                        transition={{ duration: 0.5, delay: 0.1 * 2 }}
-                        onClick={toggleMenu}
-                        className="flex justify-center"
-                      >
-                        <a
-                          href="https://react-sandbox-kappa.vercel.app/"
-                          target="_blank"
-                          className="flex items-center gap-1 bg-white py-2 text-sm font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
+                          <a
+                            href="https://svelte-sandbox-tau.vercel.app/"
+                            target="_blank"
+                            className="flex items-center gap-1 bg-white py-2 text-sm font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
+                          >
+                            <IconSvelte />
+                            <h3>Svelte</h3>
+                          </a>
+                        </motion.li>
+                        <motion.li
+                          initial={{ opacity: 0, translateY: -10 }}
+                          animate={{ opacity: 1, translateY: 0 }}
+                          transition={{ duration: 0.2 }}
+                          onClick={toggleMenu}
+                          className="flex justify-center"
                         >
-                          <IconReact />
-                          <h3>React</h3>
-                        </a>
-                      </motion.li>
-                    </ul>
-                  )}
-                </li>
-              </ul>
+                          <a
+                            href="https://react-sandbox-kappa.vercel.app/"
+                            target="_blank"
+                            className="flex items-center gap-1 bg-white py-2 text-sm font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary"
+                          >
+                            <IconReact />
+                            <h3>React</h3>
+                          </a>
+                        </motion.li>
+                      </ul>
+                    )}
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         )}
