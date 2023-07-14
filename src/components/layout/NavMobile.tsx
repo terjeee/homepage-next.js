@@ -9,8 +9,8 @@ import IconMenu from "@/components/svg/misc/IconMenu";
 import IconHome from "@/components/svg/misc/IconHome";
 import IconMail from "@/components/svg/misc/IconMail";
 import IconCode from "@/components/svg/misc/IconCode";
-import IconSvelte from "../svg/technologies/IconSvelte";
-import IconReact from "../svg/technologies/IconReact";
+import IconSvelte from "@/components/svg/technologies/IconSvelte";
+import IconReact from "@/components/svg/technologies/IconReact";
 
 export default function NavMobile() {
   const [menuOpen, toggleMenuOpen] = useState(false);
@@ -27,13 +27,18 @@ export default function NavMobile() {
     <>
       <div className="flex max-h-screen flex-col sm:hidden">
         <div className="my-auto flex justify-between">
-          <button className="z-50" onClick={toggleMenu}>
+          <button className="z-50 focus:outline-none" onClick={toggleMenu}>
             <IconMenu />
           </button>
         </div>
         {menuOpen && (
           <div className="z-40">
-            <div className="absolute inset-x-0 inset-y-0 h-screen bg-white dark:bg-darkBg">
+            <motion.div
+              initial={{ translateX: -50 }}
+              animate={{ translateX: 0 }}
+              transition={{ duration: 0.2 }}
+              className="absolute inset-x-0 inset-y-0 h-screen bg-white dark:bg-darkBg"
+            >
               <div className="flex h-full items-center justify-center">
                 <ul className="flex flex-col pb-28">
                   <li className="py-3">
@@ -92,7 +97,7 @@ export default function NavMobile() {
                   </li>
                 </ul>
               </div>
-            </div>
+            </motion.div>
           </div>
         )}
       </div>
