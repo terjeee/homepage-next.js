@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import IconGithub from "@/components/svg/misc/IconGithub";
-import IconMail from "@/components/svg/misc/IconMail";
+import IconGithub from "../svg/misc/IconGithub";
+import IconMail from "../svg/misc/IconMail";
 
 export default function Footer() {
   return (
