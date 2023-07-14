@@ -2,10 +2,10 @@
 
 import { motion } from "framer-motion";
 
-import { PROJECTS } from "../../../public/projects";
-import IconDots from "@/components/svg/misc/IconDots";
-import IconRepository from "@/components/svg/misc/IconRepository";
 import SlideShow from "@/components/UI/SlideShow";
+import { PROJECTS } from "../../../public/projects";
+import IconRepository from "@/components/svg/misc/IconRepository";
+// import IconDots from "@/components/svg/misc/IconDots";
 
 export default function Projects() {
   const projects = [...PROJECTS].reverse();
@@ -37,6 +37,7 @@ export default function Projects() {
                       Public
                     </span>
                   </div>
+                  {/* // TODO: implement DND */}
                   {/* <IconDots width="12px" fill="#A9A9A9" /> */}
                 </div>
                 <div className="items-align flex gap-2">
