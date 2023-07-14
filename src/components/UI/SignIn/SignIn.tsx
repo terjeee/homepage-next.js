@@ -1,10 +1,12 @@
 "use client";
 
 import { useSession, signOut } from "next-auth/react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+
+import LoadingSpin from "@/components/svg/misc/LoadingSpin";
 
 export default function SignIn() {
   const { data: session, status } = useSession();
@@ -12,6 +14,7 @@ export default function SignIn() {
   const refMenu = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    //  ! legger evenListener på DropDown slik at den lukkes nå en klikker utenfor komponenten
     const handleClickOutside = (event: MouseEvent) => {
       if (refMenu.current && !refMenu.current.contains(event.target as Node)) {
         setShowDropdown(false);
@@ -33,14 +36,18 @@ export default function SignIn() {
     };
   }, []);
 
-  if (status === "loading") return <></>;
+  if (status === "loading") {
+    return (
+      <div className="flex h-10 w-10 items-center justify-center">
+        <LoadingSpin />
+      </div>
+    );
+  }
+
   if (status === "authenticated")
     return (
       <div ref={refMenu} className="relative my-auto">
-        <button
-          className="block cursor-pointer rounded-full focus:outline-link"
-          onClick={() => setShowDropdown((prevState) => !prevState)}
-        >
+        <button className="block cursor-pointer rounded-full" onClick={() => setShowDropdown((prevState) => !prevState)}>
           <Image src={session.user?.image!} height={40} width={40} alt="profilbilde" className="rounded-full" />
         </button>
         {showDropdown && (
@@ -71,6 +78,3 @@ export default function SignIn() {
     </Link>
   );
 }
-
-// TODO: legg til svart outline på hover
-// TODO: eventuelt border før/etter hover:
