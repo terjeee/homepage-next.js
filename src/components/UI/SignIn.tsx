@@ -1,7 +1,7 @@
 "use client";
 
 import { useSession, signOut } from "next-auth/react";
-import { useState, useEffect, useRef, Suspense } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -14,7 +14,7 @@ export default function SignIn() {
   const refMenu = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    //  ! legger evenListener på DropDown slik at den lukkes nå en klikker utenfor komponenten
+    //  ! evenListener på DropDown: DropDown lukkes nå en klikker utenfor komponenten
     const handleClickOutside = (event: MouseEvent) => {
       if (refMenu.current && !refMenu.current.contains(event.target as Node)) {
         setShowDropdown(false);
@@ -72,7 +72,7 @@ export default function SignIn() {
   return (
     <Link
       href="/api/auth/signin"
-      className=" my-auto cursor-pointer rounded-full bg-orange px-4 py-2 text-xs font-medium tracking-widest text-white transition duration-200 hover:scale-105 hover:bg-white hover:text-black dark:hover:bg-darkBg dark:hover:text-white"
+      className=" my-auto cursor-pointer rounded-full bg-orange px-3 py-2 text-xs font-medium tracking-widest text-white transition duration-200 hover:scale-105 hover:bg-white hover:text-black dark:hover:bg-darkBg dark:hover:text-white sm:px-4"
     >
       SIGN IN
     </Link>
