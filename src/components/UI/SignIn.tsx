@@ -14,7 +14,7 @@ export default function SignIn() {
   const refMenu = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    //  ! evenListener på DropDown: DropDown lukkes nå en klikker utenfor komponenten
+    //  evenListener på DropDown: DropDown lukkes nå en klikker utenfor komponenten
     const handleClickOutside = (event: MouseEvent) => {
       if (refMenu.current && !refMenu.current.contains(event.target as Node)) {
         setShowDropdown(false);
@@ -38,7 +38,7 @@ export default function SignIn() {
 
   if (status === "loading") {
     return (
-      <div className="flex h-10 w-10 items-center justify-center">
+      <div className="my-auto flex h-10 w-10 items-center justify-center">
         <LoadingSpin />
       </div>
     );
