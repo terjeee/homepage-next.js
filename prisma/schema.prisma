@@ -6,22 +6,6 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
-
-// TODO: fiks db.url fra .env til .env.local :)
-
-model User {
-  id                 String     @id @default(auto()) @map("_id") @db.ObjectId
-  name               String?
-  email              String?    @unique
-  emailVerified      DateTime?  
-  hashedPassword     String?    
-  image              String?
-  createdAt          DateTime   @default(now())
-  updatedAt          DateTime   @updatedAt
-
-  accounts           Account[]
-}
-
 model Account {
   id                 String   @id @default(auto()) @map("_id") @db.ObjectId
   userId             String   @db.ObjectId
@@ -39,4 +23,23 @@ model Account {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
+}
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+model User {
+  id                 String     @id @default(auto()) @map("_id") @db.ObjectId
+  role               UserRole       @default(USER)
+  name               String?
+  email              String?    @unique
+  emailVerified      DateTime?  
+  hashedPassword     String?    
+  image              String?
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime   @updatedAt
+
+  accounts           Account[]
 }
