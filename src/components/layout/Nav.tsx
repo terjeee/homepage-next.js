@@ -8,7 +8,7 @@ export default function Nav() {
     <nav className="my-4 flex justify-between">
       <NavMobile />
       <NavDesktop />
-      <div className="flex gap-2">
+      <div className="flex gap-3">
         <SwitchDarkMode />
         <Authetication />
       </div>
