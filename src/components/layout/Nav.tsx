@@ -1,7 +1,7 @@
 import NavMobile from "@/components/layout/NavMobile";
 import NavDesktop from "@/components/layout/NavDesktop";
 import SwitchDarkMode from "@/components/UI/SwitchDarkMode";
-import SignIn from "@/components/UI/SignIn";
+import Authetication from "@/components/UI/Authetication/page.";
 
 export default function Nav() {
   return (
@@ -10,7 +10,7 @@ export default function Nav() {
       <NavDesktop />
       <div className="flex gap-2">
         <SwitchDarkMode />
-        <SignIn />
+        <Authetication />
       </div>
     </nav>
   );
