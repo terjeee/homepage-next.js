@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 import { type Session } from "next-auth";
+import Link from "next/link";
 
 interface Props {
   session: Session;
@@ -36,6 +37,8 @@ export default function Authenticated(props: Props) {
     };
   }, []);
 
+  // TODO: sjekk om bruker er ADMIN eller USER, om Admin rended <Link /> til admin-dsahboard
+
   return (
     <div ref={refMenu} className="relative my-auto">
       <button className="block cursor-pointer rounded-full" onClick={() => setShowDropdown((prevState) => !prevState)}>
@@ -49,7 +52,10 @@ export default function Authenticated(props: Props) {
           className="dark:bg-darkBgrounded align-center absolute left-auto right-0 w-24 rounded-md bg-white shadow dark:bg-darkBg"
         >
           <ul>
-            <li className="bg-whitetext-sm rounded-md font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary">
+            <li>
+              <Link href="/dashboard">Dashboard</Link>
+            </li>
+            <li className="bg-whitetext-sm mt-2 rounded-md font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary">
               <button onClick={() => signOut()} className="w-full py-2 text-sm font-semibold">
                 Sign Out
               </button>
