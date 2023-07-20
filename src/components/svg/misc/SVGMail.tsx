@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 
-export default function IconMail(props: SVGProps<SVGSVGElement>) {
+export default function SVGMail(props: SVGProps<SVGSVGElement>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={32.5} height={32.5} viewBox="0 0 24 26" {...props}>
       <title>Contact</title>

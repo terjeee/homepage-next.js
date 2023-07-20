@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 
-export default function SvgComponent(props: SVGProps<SVGSVGElement>) {
+export default function SVGGoogle(props: SVGProps<SVGSVGElement>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 186.69 190.5" {...props}>
       <path

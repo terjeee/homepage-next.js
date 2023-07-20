@@ -1,15 +1,14 @@
 import { SVGProps } from "react";
 
-export default function IconCode(props: SVGProps<SVGSVGElement>) {
+export default function SVGHome(props: SVGProps<SVGSVGElement>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={32.5} height={32.5} fill="none" viewBox="0 0 24 24" {...props}>
-      <path strokeLinecap="round" strokeWidth={1.5} d="m11 16 2-8" className="stroke-black dark:stroke-white" />
       <path
         className="stroke-black dark:stroke-white"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={1.5}
-        d="m17 15 2.696-2.696v0a.43.43 0 0 0 0-.608v0L17 9M7 9l-2.678 2.678v0a.455.455 0 0 0 0 .643v0L7 15"
+        d="M15 16a3 3 0 0 0-6 0v4H4V10l4-3.5M12 3l8 7v10h-5"
       />
     </svg>
   );
