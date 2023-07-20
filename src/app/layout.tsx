@@ -8,8 +8,8 @@ interface Props {
 }
 
 export const metadata = {
-  title: "Hei :)",
-  description: "",
+  title: ":)",
+  description: "Velkommen!",
 };
 
 export default function RootLayout({ children }: Props) {
