@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-import IconMoon from "../svg/misc/IconMoon";
-import IconSun from "../svg/misc/IconSun";
+import IconMoon from "@/components/svg/misc/SVGMoon";
+import IconSun from "@/components/svg/misc/SVGSun";
 
 export default function SwitchDarkMode() {
   const [theme, setTheme] = useState<string | undefined>(undefined);

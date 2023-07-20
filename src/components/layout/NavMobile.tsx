@@ -5,10 +5,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import useScrollLock from "@/utils/hooks/useScrollLock";
 
-import IconMenu from "@/components/svg/misc/IconMenu";
-import IconHome from "@/components/svg/misc/IconHome";
-import IconMail from "@/components/svg/misc/IconMail";
-import IconCode from "@/components/svg/misc/IconCode";
+import IconMenu from "@/components/svg/misc/SVGMenu";
+import IconHome from "@/components/svg/misc/SVGHome";
+import IconMail from "@/components/svg/misc/SVGMail";
+import IconCode from "@/components/svg/misc/SVGCode";
 import IconSvelte from "@/components/svg/technologies/IconSvelte";
 import IconReact from "@/components/svg/technologies/IconReact";
 

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 import SlideShow from "@/components/UI/SlideShow";
 import { PROJECTS } from "../../../public/projects";
-import IconRepository from "@/components/svg/misc/IconRepository";
+import IconRepository from "@/components/svg/misc/SVGRepository";
 // import IconDots from "@/components/svg/misc/IconDots";
 
 export default function Projects() {
