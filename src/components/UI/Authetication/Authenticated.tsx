@@ -1,10 +1,13 @@
+import { type Session } from "next-auth";
+
 import { useState, useRef, useEffect } from "react";
 import { signOut } from "next-auth/react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
-import { type Session } from "next-auth";
-import Link from "next/link";
+import SVGDashboard from "@/components/svg/misc/SVGDashboard";
+import SVGSignOut from "@/components/svg/misc/SVGSignOut";
 
 interface Props {
   session: Session;
@@ -49,14 +52,21 @@ export default function Authenticated(props: Props) {
           initial={{ opacity: 0, translateY: -10 }}
           animate={{ opacity: 1, translateY: 0 }}
           transition={{ duration: 0.1 }}
-          className="dark:bg-darkBgrounded align-center absolute left-auto right-0 w-24 rounded-md bg-white shadow dark:bg-darkBg"
+          className="dark:bg-darkBgrounded align-center absolute left-auto right-0 min-w-full rounded-md bg-white shadow dark:bg-darkBg"
         >
-          <ul>
-            <li>
-              <Link href="/dashboard">Dashboard</Link>
+          <ul className="mt-2">
+            <li className="bg-whitetext-sm flex justify-center rounded-md font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary">
+              <Link href="/dashboard" className="flex items-center gap-1 px-4 py-2 text-sm font-semibold">
+                <SVGDashboard />
+                Dashboard
+              </Link>
             </li>
-            <li className="bg-whitetext-sm mt-2 rounded-md font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary">
-              <button onClick={() => signOut()} className="w-full py-2 text-sm font-semibold">
+            <li className="bg-whitetext-sm flex justify-center rounded-md font-semibold hover:bg-lightGrey dark:bg-darkBg dark:text-white dark:hover:bg-darkSecondary">
+              <button
+                onClick={() => signOut({ callbackUrl: "/" })}
+                className="flex items-center gap-2 px-4 py-2 text-sm font-semibold"
+              >
+                <SVGSignOut />
                 Sign Out
               </button>
             </li>
