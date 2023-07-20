@@ -19,7 +19,6 @@ export default function Layout({ children }: Props) {
         </button>
       </nav>
       {children}
-      <Footer />
     </>
   );
 }
