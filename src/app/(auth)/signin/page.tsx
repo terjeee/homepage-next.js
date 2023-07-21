@@ -4,8 +4,8 @@ import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 import LoadingSpin from "@/components/svg/misc/LoadingSpin";
-import SVGGithub from "@/components/svg/misc/SVGGithub";
-import SVGGoogle from "@/components/svg/misc/SVGGoogle";
+// import SVGGoogle from "@/components/svg/misc/SVGGoogle";
+// import SVGGithub from "@/components/svg/misc/SVGGithub";
 
 export default function SignIn() {
   const { status } = useSession();
@@ -27,7 +27,7 @@ export default function SignIn() {
           onClick={() => signIn("google", { callbackUrl: "/" })}
           className="flex items-center justify-center gap-5 px-6 py-3"
         >
-          <SVGGoogle />
+          {/* <SVGGoogle /> */}
           <span className="font-semibold">Continue with Google</span>
         </button>
       </div>
@@ -36,7 +36,8 @@ export default function SignIn() {
           onClick={() => signIn("github", { callbackUrl: "/" })}
           className="flex items-center justify-center gap-5 px-6 py-3"
         >
-          <SVGGithub width={20} height={20} />
+          ''
+          {/* <SVGGithub width={20} height={20} /> */}
           <span className="font-semibold">Continue with Github</span>
         </button>
       </div>
