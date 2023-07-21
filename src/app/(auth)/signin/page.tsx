@@ -4,8 +4,8 @@ import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 import LoadingSpin from "@/components/svg/misc/LoadingSpin";
-import SVGGoogle from "@/components/svg/misc/SVGGoogle";
 import SVGGithub from "@/components/svg/misc/SVGGithub";
+import SVGGoogle from "@/components/svg/misc/SVGGoogle";
 
 export default function SignIn() {
   const { status } = useSession();
