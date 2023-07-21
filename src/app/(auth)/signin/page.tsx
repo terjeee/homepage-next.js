@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 import LoadingSpin from "@/components/svg/misc/LoadingSpin";
 import SVGGoogle from "@/components/svg/misc/Google";
-import SVGGithub from "@/components/svg/misc/Github";
+import ÏconGithub from "@/components/svg/misc/IconGithub";
 
 export default function SignIn() {
   const { status } = useSession();
@@ -36,7 +36,7 @@ export default function SignIn() {
           onClick={() => signIn("github", { callbackUrl: "/" })}
           className="flex items-center justify-center gap-5 px-6 py-3"
         >
-          <SVGGithub />
+          <ÏconGithub />
           <span className="font-semibold">Continue with Github</span>
         </button>
       </div>
