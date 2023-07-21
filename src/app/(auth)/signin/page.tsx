@@ -4,7 +4,7 @@ import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 import LoadingSpin from "@/components/svg/misc/LoadingSpin";
-import SVGGoogle from "@/components/svg/misc/Google";
+import SVGGoogle from "@/components/svg/misc/SVGGoogle";
 import ÏconGithub from "@/components/svg/misc/IconGithub";
 
 export default function SignIn() {
