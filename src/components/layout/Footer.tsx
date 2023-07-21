@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import SVGMail from "@/components/svg/misc/SVGMail";
-import SVGGithub from "@/components/svg/misc/SVGGithub";
+import SVGGithub from "@/components/svg/misc/Github";
 
 export default function Footer() {
   return (
