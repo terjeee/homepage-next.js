@@ -1,8 +1,8 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import Footer from "@/components/layout/Footer";
 import ArrowLeft from "@/components/svg/misc/ArrowLeft";
+import Footer from "@/components/layout/Footer";
 
 interface Props {
   children: React.ReactNode;
@@ -19,6 +19,7 @@ export default function Layout({ children }: Props) {
         </button>
       </nav>
       {children}
+      <Footer />
     </>
   );
 }
