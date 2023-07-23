@@ -1,19 +1,13 @@
 "use client";
 
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
 
 import LoadingSpin from "@/components/svg/misc/LoadingSpin";
+import SignIn from "@/components/UI/Authetication/SignIn";
 import Authenticated from "./Authenticated";
 
 export default function Authetication() {
-  const router = useRouter();
-  const { data: session, status } = useSession({
-    required: true,
-    onUnauthenticated() {
-      return router.push("/signin");
-    },
-  });
+  const { data: session, status } = useSession();
 
   if (status === "loading") {
     return (
@@ -23,5 +17,9 @@ export default function Authetication() {
     );
   }
 
-  return <Authenticated session={session} />;
+  if (status === "authenticated") {
+    return <Authenticated session={session} />;
+  }
+
+  return <SignIn />;
 }
