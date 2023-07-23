@@ -18,9 +18,9 @@ export default function NavMobile() {
   const [toggleScrollLock] = useScrollLock();
 
   const toggleMenu = () => {
-    toggleScrollLock();
-    toggleSandboxOpen(false);
     toggleMenuOpen((prevState) => !prevState);
+    toggleSandboxOpen(false);
+    toggleScrollLock();
   };
 
   return (
@@ -40,7 +40,6 @@ export default function NavMobile() {
                     initial={{ opacity: 0, translateY: -10 }}
                     animate={{ opacity: 1, translateY: 0 }}
                     transition={{ duration: 0.2 }}
-                    onClick={toggleMenu}
                   >
                     <Link href="/" onClick={toggleMenu} className="flex items-center justify-end gap-2">
                       <h2 className="text-2xl font-semibold tracking-wider">home</h2>
@@ -51,7 +50,6 @@ export default function NavMobile() {
                     initial={{ opacity: 0, translateY: -10 }}
                     animate={{ opacity: 1, translateY: 0 }}
                     transition={{ duration: 0.2, delay: 0.05 }}
-                    onClick={toggleMenu}
                   >
                     <Link href="/contact" onClick={toggleMenu} className="flex items-center justify-end gap-2">
                       <h2 className="text-2xl font-semibold tracking-wider">contact</h2>
