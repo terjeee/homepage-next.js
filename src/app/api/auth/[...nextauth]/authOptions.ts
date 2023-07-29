@@ -23,6 +23,29 @@ const authOptions: AuthOptions = {
   pages: {
     signIn: "/signin",
   },
+  callbacks: {
+    // async jwt({ token, user }) {
+    //   const dbUser = await prismaClient.user.findFirst({
+    //     where: { email: user.email },
+    //   });
+    //   if (!dbUser) return token;
+    //   return {
+    //     id: dbUser.id,
+    //     role: dbUser.role,
+    //     name: dbUser.name,
+    //     email: dbUser.email,
+    //     image: dbUser.image,
+    //   };
+    // },
+    // async session({ token, session }) {
+    //   // if (token) {
+    //   //   session.user.name = token.name
+    //   //   session.user.email = token.email,
+    //   //   session.user?.image = token.image
+    //   // }
+    //   // return session;
+    // },
+  },
 };
 
 // TODO: provider -> credentials, github?
