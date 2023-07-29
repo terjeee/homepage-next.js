@@ -14,12 +14,12 @@ import IconReact from "@/components/svg/technologies/IconReact";
 
 export default function NavMobile() {
   const [menuOpen, toggleMenuOpen] = useState(false);
-  const [sandboxOpen, toggleSandboxOpen] = useState(false);
+  // const [sandboxOpen, toggleSandboxOpen] = useState(false);
   const [toggleScrollLock] = useScrollLock();
 
   const toggleMenu = () => {
     toggleMenuOpen((prevState) => !prevState);
-    toggleSandboxOpen(false);
+    // toggleSandboxOpen(false);
     toggleScrollLock();
   };
 
@@ -56,7 +56,7 @@ export default function NavMobile() {
                       <IconMail height={37.5} width={37.5} />
                     </Link>
                   </motion.li>
-                  <motion.li
+                  {/* <motion.li
                     initial={{ opacity: 0, translateY: -10 }}
                     animate={{ opacity: 1, translateY: 0 }}
                     transition={{ duration: 0.2, delay: 0.1 }}
@@ -105,7 +105,7 @@ export default function NavMobile() {
                         </motion.li>
                       </ul>
                     )}
-                  </motion.li>
+                  </motion.li> */}
                 </ul>
               </div>
             </div>
