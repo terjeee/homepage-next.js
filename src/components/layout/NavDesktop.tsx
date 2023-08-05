@@ -23,8 +23,8 @@ export default function NavDesktop() {
         {paths.map(([title, path]) => (
           <li
             key={title}
-            className={`rounded-md px-2 py-[2px] text-lg font-semibold hover:bg-black hover:text-white focus:rounded-md dark:text-white dark:hover:bg-white dark:hover:text-black ${
-              currentPath === path ? "bg-black text-white dark:bg-white dark:text-black" : null
+            className={`rounded-md px-2 py-[2px] text-lg font-semibold hover:bg-darkSecondary hover:text-white focus:rounded-md dark:hover:bg-white dark:hover:text-black ${
+              currentPath === path ? "bg-darkSecondary text-white dark:bg-white dark:text-black" : null
             }`}
           >
             <Link href={path}>{title}</Link>
