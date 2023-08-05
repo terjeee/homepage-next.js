@@ -13,7 +13,7 @@ export default function Layout({ children }: Props) {
   const router = useRouter();
   const { data: session, status } = useSession();
 
-  // TODO: SJEKK OM "autheticated" -> role = "ADMIN", om "USER" redirect til /dashboard
+  // TODO: SJEKK OM "autheticated" -> role = "ADMIN", om "USER" redirect til /dashboard ?med hotToast?
 
   if (status === "unauthenticated") return router.replace("/signin");
 
