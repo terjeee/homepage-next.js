@@ -45,7 +45,7 @@ export default function Authenticated(props: Props) {
   return (
     <div ref={refMenu} className="relative my-auto">
       <button className="block cursor-pointer rounded-full" onClick={() => setShowDropdown((prevState) => !prevState)}>
-        <Image src={session.user?.image!} height={45} width={45} alt="profilbilde" className="rounded-full" />
+        <Image src={session.user?.image!} height={40} width={40} alt="profilbilde" className="rounded-full" />
       </button>
       {showDropdown && (
         <motion.div
