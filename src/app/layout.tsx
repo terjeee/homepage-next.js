@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const metadata = {
-  title: ":)",
+  // title: ":)",
   description: "Velkommen!",
 };
 
