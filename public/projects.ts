@@ -1,12 +1,12 @@
 export const PROJECTS = [
-  {
-    id: 1,
-    link: "https://terjeee.github.io/2022-08-21-bank-landing-page/",
-    linkRepo: "https://github.com/terjeee/2022-08-21-bank-landing-page",
-    title: "EasyBank - Landing Page",
-    colorDot: "#F1E05A",
-    text: "React, React Router",
-  },
+  // {
+  //   id: 1,
+  //   link: "https://terjeee.github.io/2022-08-21-bank-landing-page/",
+  //   linkRepo: "https://github.com/terjeee/2022-08-21-bank-landing-page",
+  //   title: "EasyBank - Landing Page",
+  //   colorDot: "#F1E05A",
+  //   text: "React, React Router",
+  // },
   {
     id: 2,
     link: "https://terjeee.github.io/2022.05.27-Advice-Generator/",
@@ -77,7 +77,7 @@ export const PROJECTS = [
     link: "https://svelte-sandbox-tau.vercel.app/",
     linkRepo: "https://github.com/terjeee/svelte-sandbox",
     colorDot: "#FF3E00",
-    title: "Svelte",
+    title: "Aftenposten",
     text: "Svelte, Typescript, D3, MapLibre, Tailwind",
   },
   {
@@ -85,7 +85,7 @@ export const PROJECTS = [
     link: "https://react-sandbox-kappa.vercel.app/",
     linkRepo: "https://github.com/terjeee/react-sandbox",
     colorDot: "#3178c6",
-    title: "React",
+    title: "Data Vizualisation",
     text: "React, Typescript, ChartJS, Recharts, Tailwind",
   },
 ];
