@@ -28,7 +28,7 @@ export const PROJECTS = [
     link: "https://svelte-test-mauve.vercel.app/",
     linkRepo: "https://github.com/terjeee/svelte-test",
     colorDot: "#FF3E00",
-    title: "Landing page",
+    title: "Svelte Test",
     text: "SvelteKit, Tailwind, Typescript",
   },
   {
