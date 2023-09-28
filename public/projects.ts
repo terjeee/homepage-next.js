@@ -63,9 +63,16 @@ export const PROJECTS = [
     title: "To-do List",
     text: "React, Typescript, Redux, SCSS",
   },
-
   {
     id: 9,
+    link: "https://react-sandbox-kappa.vercel.app/",
+    linkRepo: "https://github.com/terjeee/react-sandbox",
+    colorDot: "#3178c6",
+    title: "Data Vizualisation",
+    text: "React, Typescript, ChartJS, Recharts, Tailwind",
+  },
+  {
+    id: 10,
     link: "https://terjeee.github.io/2022-09-04-rest-countries-api/",
     linkRepo: "https://github.com/terjeee/2022-09-04-rest-countries-api",
     colorDot: "#F1E05A",
@@ -73,19 +80,11 @@ export const PROJECTS = [
     text: "React, React Router, SCSS",
   },
   {
-    id: 10,
+    id: 11,
     link: "https://svelte-sandbox-tau.vercel.app/",
     linkRepo: "https://github.com/terjeee/svelte-sandbox",
     colorDot: "#FF3E00",
     title: "Aftenposten",
     text: "Svelte, Typescript, D3, MapLibre, Tailwind",
-  },
-  {
-    id: 11,
-    link: "https://react-sandbox-kappa.vercel.app/",
-    linkRepo: "https://github.com/terjeee/react-sandbox",
-    colorDot: "#3178c6",
-    title: "Data Vizualisation",
-    text: "React, Typescript, ChartJS, Recharts, Tailwind",
   },
 ];
