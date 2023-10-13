@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
+// import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
-import IconReact from "@/components/svg/technologies/IconReact";
-import IconSvelte from "@/components/svg/technologies/IconSvelte";
+// import IconReact from "@/components/svg/technologies/IconReact";
+// import IconSvelte from "@/components/svg/technologies/IconSvelte";
 
 const paths = [
   ["home", "/"],
@@ -15,7 +15,7 @@ const paths = [
 
 export default function NavDesktop() {
   const currentPath = usePathname();
-  const [showDropdown, setShowDropdown] = useState(false);
+  // const [showDropdown, setShowDropdown] = useState(false);
 
   return (
     <div className="hidden items-center py-4 sm:flex">
