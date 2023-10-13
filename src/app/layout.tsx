@@ -1,15 +1,15 @@
 import "@/app/globals.css";
 
 import MaxWidth from "@/components/UI/MaxWidth";
-import AuthProvider from "@/app/context/AuthContext";
+import AuthProvider from "@/utils/context/AuthContext";
 
 interface Props {
   children: React.ReactNode;
 }
 
 export const metadata = {
-  // title: ":)",
-  description: "Velkommen!",
+  title: "",
+  description: "Velkommen! :)",
 };
 
 export default function RootLayout({ children }: Props) {
