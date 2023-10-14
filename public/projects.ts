@@ -23,14 +23,14 @@ export const PROJECTS = [
     colorDot: "#F1E05A",
     text: "React",
   },
-  {
-    id: 4,
-    link: "https://svelte-test-mauve.vercel.app/",
-    linkRepo: "https://github.com/terjeee/svelte-test",
-    colorDot: "#FF3E00",
-    title: "Svelte Test",
-    text: "SvelteKit, Tailwind, Typescript",
-  },
+  // {
+  //   id: 4,
+  //   link: "https://svelte-test-mauve.vercel.app/",
+  //   linkRepo: "https://github.com/terjeee/svelte-test",
+  //   colorDot: "#FF3E00",
+  //   title: "Svelte Test",
+  //   text: "SvelteKit, Tailwind, Typescript",
+  // },
   {
     id: 5,
     link: "https://terjeee.github.io/2022-08-14-ip-address-tracker/",
