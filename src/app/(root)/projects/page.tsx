@@ -1,5 +1,5 @@
 import SlideShow from "@/components/UI/SlideShow";
-import ProjectList from "@/components/sections/ProjectList";
+import ProjectList from "@/components/UI/ProjectList";
 
 export default function Projects() {
   return (
