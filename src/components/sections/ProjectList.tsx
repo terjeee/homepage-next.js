@@ -2,23 +2,20 @@
 
 import { motion } from "framer-motion";
 
-import SlideShow from "@/components/UI/SlideShow";
 import { PROJECTS } from "../../../public/projects";
 import IconRepository from "@/components/svg/misc/SVGRepository";
-// import IconDots from "@/components/svg/misc/IconDots";
+import SVGDots from "@/components/svg/misc/SVGDots";
 
-export default function Projects() {
+export default function ProjectList() {
   const projects = [...PROJECTS].reverse();
 
   return (
-    <section className="pt-2">
-      <h1 className="py-6 text-center font-silkscreen text-4xl tracking-widest">PROSJEKTER</h1>
-      <SlideShow />
-      <ul className="my-6 flex flex-col gap-5 sm:grid sm:auto-cols-fr">
-        {projects.map((el, index) => {
-          const colSpan = (index + 1) % 3 === 0 ? "col-span-2" : "col-span-1";
-          return (
-            // hvis listen fetches bruk {projects.length > 0  && <motion.li />} for ikke å kjøre for tidlig
+    <ul className="flex flex-col gap-5 sm:grid sm:auto-cols-fr">
+      {projects.map((el, index) => {
+        const colSpan = (index + 1) % 3 === 0 ? "col-span-2" : "col-span-1";
+
+        return (
+          projects.length > 0 && (
             <motion.li
               key={el.id}
               initial={{ opacity: 0, translateY: -25 }}
@@ -30,28 +27,23 @@ export default function Projects() {
                 <div className="flex justify-between">
                   <div className="flex items-center justify-center gap-2">
                     <IconRepository width="15px" />
-                    <h2 className=" cursor-button text-md font-bold text-link group-hover:underline md:text-lg">
-                      {el.title}
-                    </h2>
+                    <h2 className=" cursor-button text-md font-bold text-link group-hover:underline md:text-lg">{el.title}</h2>
                     <span className="mx-auto rounded-full border border-[#A9A9A9] px-[0.25rem] py-[0.1rem] text-center text-[9px] font-bold">
                       Public
                     </span>
                   </div>
                   {/* // TODO: implement DND */}
-                  {/* <IconDots width="12px" fill="#A9A9A9" /> */}
+                  <SVGDots width="12px" fill="#A9A9A9" />
                 </div>
                 <div className="items-align flex gap-2">
-                  <span
-                    className={`my-auto h-[12px] w-[12px] rounded-full bg-${el.colorDot}`}
-                    style={{ backgroundColor: el.colorDot }}
-                  ></span>
+                  <span className={`my-auto h-[12px] w-[12px] rounded-full bg-${el.colorDot}`} style={{ backgroundColor: el.colorDot }}></span>
                   <p className="text-xs">{el.text}</p>
                 </div>
               </a>
             </motion.li>
-          );
-        })}
-      </ul>
-    </section>
+          )
+        );
+      })}
+    </ul>
   );
 }
