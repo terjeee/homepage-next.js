@@ -2,14 +2,8 @@ import type { SVGProps } from "react";
 
 export default function IconTs(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      width="1em"
-      height="1em"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-label="TypeScript"
-      viewBox="0 0 512 512"
-      {...props}
-    >
+    <svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" aria-label="TypeScript" viewBox="0 0 512 512" {...props}>
+      {/* <title>TypeScript</title> */}
       <rect width={512} height={512} rx="15%" fill="#3178c6" />
       <path
         fill="#fff"

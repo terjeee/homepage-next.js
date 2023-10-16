@@ -3,7 +3,7 @@ import type { SVGProps } from "react";
 export default function IconSvelte(props: SVGProps<SVGSVGElement>) {
   return (
     <svg width="1em" height="1em" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <title>Svelte</title>
+      {/* <title>Svelte</title> */}
       <path
         d="M26.47 5.7a8.973 8.973 0 0 0-11.793-2.454L7.96 7.4a7.461 7.461 0 0 0-3.481 5.009 7.686 7.686 0 0 0 .8 5.058 7.358 7.358 0 0 0-1.151 2.8 7.789 7.789 0 0 0 1.4 6.028 8.977 8.977 0 0 0 11.794 2.458L24.04 24.6a7.468 7.468 0 0 0 3.481-5.009 7.673 7.673 0 0 0-.8-5.062 7.348 7.348 0 0 0 1.152-2.8A7.785 7.785 0 0 0 26.47 5.7"
         style={{
