@@ -46,10 +46,7 @@ export default function Contact() {
 
   return (
     <div className="my-36 flex h-full items-center justify-center gap-6">
-      <h1
-        className="hidden text-2xl font-bold tracking-widest sm:block"
-        style={{ writingMode: "vertical-rl", textOrientation: "upright" }}
-      >
+      <h1 className="hidden text-2xl font-bold tracking-widest sm:block" style={{ writingMode: "vertical-rl", textOrientation: "upright" }}>
         CONTACT
       </h1>
       <form className="flex min-w-[45%] flex-col gap-3" onSubmit={sendEmail} ref={formData}>
@@ -58,16 +55,14 @@ export default function Contact() {
             id="formEmail"
             type="email"
             name="formEmail"
-            placeholder="Email"
+            placeholder="EMAIL"
             spellCheck={false}
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            className={`w-full rounded-md border border-darkGrey px-2 py-3 font-silkscreen text-sm font-medium text-black placeholder-orange focus:border-black dark:bg-darkSecondary dark:text-white dark:placeholder-orange dark:focus:border-white
+            className={`placeholder-grey dark:placeholder-grey w-full rounded-md border border-darkGrey px-2 py-3 font-silkscreen text-sm font-medium text-black focus:rounded-md focus:border-black dark:bg-darkSecondary dark:text-white dark:focus:border-white
             `}
           />
-          {!emailValid && (
-            <p className="-mb-1 pt-1 text-[13px] font-bold text-red dark:font-semibold">Please enter a valid email.</p>
-          )}
+          {!emailValid && <p className="-mb-1 pt-1 text-[13px] font-bold text-red dark:font-semibold">Please enter a valid email.</p>}
         </div>
         <div>
           <textarea
@@ -77,13 +72,9 @@ export default function Contact() {
             spellCheck={false}
             value={message}
             onChange={(event) => setMessage(event.target.value)}
-            className={`dark:focus:border-whitedark:placeholder-orange block h-28 w-full resize-none rounded-md border border-darkGrey px-2 py-3 font-silkscreen text-sm font-medium text-black placeholder-orange focus:border-black dark:bg-darkSecondary dark:text-white dark:focus:border-white`}
+            className={`dark:focus:border-whitedark:placeholder-grey placeholder-grey block h-28 w-full resize-none rounded-md border border-darkGrey px-2 py-3 font-silkscreen text-sm font-medium text-black focus:rounded-md focus:border-black dark:bg-darkSecondary dark:text-white dark:focus:border-white`}
           />
-          {!messageValid && (
-            <p className="-mb-1 pt-1 text-[13px] font-bold text-red dark:font-semibold">
-              Message needs to be 5-250 characters.
-            </p>
-          )}
+          {!messageValid && <p className="-mb-1 pt-1 text-[13px] font-bold text-red dark:font-semibold">Message needs to be 5-250 characters.</p>}
         </div>
         <button
           className="cursor-pointer rounded-md border border-link bg-link px-2 py-3 font-silkscreen text-sm font-bold text-white disabled:cursor-not-allowed disabled:border-darkGrey disabled:bg-darkGrey"
