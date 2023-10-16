@@ -45,11 +45,12 @@ export default function Contact() {
   }
 
   return (
-    <div className="my-36 flex h-full items-center justify-center gap-6">
+    <div className="my-36 flex h-full flex-col items-center justify-center gap-6 sm:my-40 sm:flex-row">
+      <h1 className="pl-3 text-center text-2xl font-bold tracking-[0.5em] sm:hidden">CONTACT</h1>
       <h1 className="hidden text-2xl font-bold tracking-widest sm:block" style={{ writingMode: "vertical-rl", textOrientation: "upright" }}>
         CONTACT
       </h1>
-      <form className="flex min-w-[45%] flex-col gap-3" onSubmit={sendEmail} ref={formData}>
+      <form className="flex min-w-[45%] flex-col gap-4" onSubmit={sendEmail} ref={formData}>
         <div className="group relative ">
           <input
             id="formEmail"
