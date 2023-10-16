@@ -17,7 +17,7 @@ module.exports = {
       purple: "#DC6BAD",
       orange: "#FF9000",
       link: "#0969da",
-      darkBg: "#121212",
+      darkBg: "#040404",
       darkSecondary: "#282828",
     },
     extend: {
@@ -25,7 +25,7 @@ module.exports = {
         github: "rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.2) 0px 0px 0px 1px",
       },
       animation: {
-        slideShow: "slideShow 70s linear infinite",
+        slideShow: "slideShow 50s linear infinite",
       },
       keyframes: {
         slideShow: {
