@@ -10,47 +10,55 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [emailValid, setEmailValid] = useState<boolean | undefined>(undefined);
   const [messageValid, setMessageValid] = useState<boolean | undefined>(undefined);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const formData = useRef<HTMLFormElement>(null);
   const formValid = email.length > 0 && regexEmail.test(email) && message.length >= 5 && message.length < 250;
 
   useEffect(() => {
     setEmailValid(true);
+
     const timeoutEmail = setTimeout(() => {
       if (email.length > 0 && !regexEmail.test(email)) return setEmailValid(false);
     }, 1000);
-    return () => clearTimeout(timeoutEmail); // return (i useEffect) = clean-up før main code
+    return () => clearTimeout(timeoutEmail); // return (useEffect) = clean-up før main code
   }, [email]);
 
   useEffect(() => {
     setMessageValid(true);
+
     const timeoutMessage = setTimeout(() => {
       if (message.length !== 0 && (message.length < 5 || message.length > 100)) return setMessageValid(false);
     }, 1000);
-    return () => clearTimeout(timeoutMessage); // return (i +useEffect) = clean-up før main code
+    return () => clearTimeout(timeoutMessage); // return (+useEffect) = clean-up før main code
   }, [message]);
-
-  function sendEmail(event: FormEvent<HTMLFormElement>) {
+  
+  function handleSendEmail(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (formData.current) {
-      emailjs.sendForm("service_contactForm", "template_70fzocf", formData.current, "6hbDSK_0uSjg0vdP5").then(
-        () => {
-          setEmail("");
-          setMessage("");
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
+
+    try {
+      if (formData.current) {
+        setIsSubmitting(true);
+
+        emailjs.sendForm("service_contactForm", "template_70fzocf", formData.current, "6hbDSK_0uSjg0vdP5").then(() => {
+          setIsSubmitting(false)
+        });
+        
+        setEmail("");
+        setMessage("");
+      }
+    } catch (error) {
+      setIsSubmitting(false)
+      console.log(error);
     }
   }
 
   return (
     <div className="my-36 flex h-full flex-col items-center justify-center gap-6 sm:my-40 sm:flex-row">
-      <h1 className="pl-3 text-center text-2xl font-bold tracking-[0.5em] sm:hidden">CONTACT</h1>
       <h1 className="hidden text-2xl font-bold tracking-widest sm:block" style={{ writingMode: "vertical-rl", textOrientation: "upright" }}>
         CONTACT
       </h1>
-      <form className="flex min-w-[45%] flex-col gap-4" onSubmit={sendEmail} ref={formData}>
+      <form className="flex min-w-[45%] flex-col gap-3" onSubmit={handleSendEmail} ref={formData}>
         <div className="group relative ">
           <input
             id="formEmail"
@@ -81,7 +89,7 @@ export default function Contact() {
           className="cursor-pointer rounded-md border border-link bg-link px-2 py-3 font-silkscreen text-sm font-bold text-white disabled:cursor-not-allowed disabled:border-darkGrey disabled:bg-darkGrey"
           disabled={!formValid}
         >
-          SEND
+          {isSubmitting ? "Sending.." : "SEND"}
         </button>
       </form>
     </div>

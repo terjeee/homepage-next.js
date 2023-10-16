@@ -26,7 +26,7 @@ export default function NavDesktop() {
             key={title}
             className={`${
               currentPath === path ? "bg-darkSecondary text-white dark:bg-white dark:text-black" : null
-            } rounded-md px-2 py-[2px] text-lg font-semibold hover:bg-darkSecondary hover:text-white focus:rounded-md dark:hover:bg-white dark:hover:text-black`}
+            } rounded-md px-2 py-[2px] font-semibold hover:bg-darkSecondary hover:text-white focus:rounded-md dark:hover:bg-white dark:hover:text-black`}
           >
             <Link href={path}>{title}</Link>
           </li>
