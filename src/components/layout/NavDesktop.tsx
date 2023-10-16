@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 
 const paths = [
   ["home", "/"],
+  ["projects", "/projects"],
   ["contact", "/contact"],
 ];
 
@@ -23,9 +24,9 @@ export default function NavDesktop() {
         {paths.map(([title, path]) => (
           <li
             key={title}
-            className={`rounded-md px-2 py-[2px] text-lg font-semibold hover:bg-darkSecondary hover:text-white focus:rounded-md dark:hover:bg-white dark:hover:text-black ${
+            className={`${
               currentPath === path ? "bg-darkSecondary text-white dark:bg-white dark:text-black" : null
-            }`}
+            } rounded-md px-2 py-[2px] text-lg font-semibold hover:bg-darkSecondary hover:text-white focus:rounded-md dark:hover:bg-white dark:hover:text-black`}
           >
             <Link href={path}>{title}</Link>
           </li>
