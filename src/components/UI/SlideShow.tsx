@@ -1,5 +1,6 @@
-import IconTs from "@/components/svg/technologies/IconTs";
-import IconJs from "@/components/svg/technologies/IconJs";
+import IconJS from "@/components/svg/technologies/IconJs";
+import IconTS from "@/components/svg/technologies/IconTs";
+import IconPython from "@/components/svg/technologies/IconPython";
 import IconReact from "@/components/svg/technologies/IconReact";
 import IconVue from "@/components/svg/technologies/IconVue";
 import IconSvelte from "@/components/svg/technologies/IconSvelte";
@@ -12,52 +13,57 @@ import IconMongoDb from "@/components/svg/technologies/IconMongoDb";
 const icons = [
   {
     id: 1,
-    icon: <IconJs width="40px" height="40px" />,
+    icon: <IconJS />,
     path: "https://en.wikipedia.org/wiki/JavaScript",
   },
   {
     id: 2,
-    icon: <IconTs width="40px" height="40px" />,
+    icon: <IconTS />,
     path: "https://www.typescriptlang.org/",
   },
   {
     id: 3,
-    icon: <IconReact width="40px" height="40px" />,
-    path: "https://react.dev/learn",
+    icon: <IconPython />,
+    path: "https://www.python.org/about/",
   },
   {
     id: 4,
-    icon: <IconNext width="40px" height="40px" className="dark:fill-white" />,
-    path: "https://nextjs.org/docs",
+    icon: <IconReact />,
+    path: "https://react.dev/learn",
   },
   {
     id: 5,
-    icon: <IconSvelte width="40px" height="40px" />,
-    path: "https://svelte.dev/docs/introduction",
+    icon: <IconNext className="dark:fill-white" />,
+    path: "https://nextjs.org/docs",
   },
   {
     id: 6,
-    icon: <IconVue width="40px" height="40px" />,
-    path: "https://vuejs.org/guide/introduction.html",
+    icon: <IconSvelte />,
+    path: "https://svelte.dev/docs/introduction",
   },
   {
     id: 7,
-    icon: <IconSass width="40px" height="40px" />,
-    path: "https://sass-lang.com/",
+    icon: <IconVue />,
+    path: "https://vuejs.org/guide/introduction.html",
   },
   {
     id: 8,
-    icon: <IconTailwind width="40px" height="40px" />,
-    path: "https://tailwindcss.com/docs/installation",
+    icon: <IconSass />,
+    path: "https://sass-lang.com/",
   },
   {
     id: 9,
-    icon: <IconNode width="40px" height="40px" />,
-    path: "https://nodejs.org/en/about",
+    icon: <IconTailwind />,
+    path: "https://tailwindcss.com/docs/installation",
   },
   {
     id: 10,
-    icon: <IconMongoDb width="40px" height="40px" className="dark:fill-[#116149]" />,
+    icon: <IconNode />,
+    path: "https://nodejs.org/en/about",
+  },
+  {
+    id: 11,
+    icon: <IconMongoDb className="dark:fill-[#116149]" />,
     path: "https://www.mongodb.com/docs/",
   },
 ];
@@ -67,14 +73,14 @@ export default function SlideShow() {
     <div className="group relative flex overflow-hidden py-4 before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-10 before:bg-gradient-to-r before:from-white before:to-0% after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-10 after:bg-gradient-to-l after:from-white after:to-0% dark:before:from-darkBg dark:after:from-darkBg">
       <div className="md:group-hover:animation-pause flex animate-slideShow gap-24 px-12 md:gap-32 md:px-16">
         {icons.map(({ id, icon, path }) => (
-          <a href={path} target="_blank" key={id} className="md:transition md:duration-100 md:ease-in md:hover:scale-110">
+          <a href={path} target="_blank" key={id} className="block w-8 sm:w-10 md:transition md:duration-100 md:ease-in md:hover:scale-110">
             {icon}
           </a>
         ))}
       </div>
       <div className="md:group-hover:animation-pause flex animate-slideShow gap-24 px-12 md:gap-32 md:px-16">
         {icons.map(({ id, icon, path }) => (
-          <a href={path} target="_blank" key={id} className="md:transition md:duration-100 md:ease-in md:hover:scale-110">
+          <a href={path} target="_blank" key={id} className="block w-8 sm:w-10 md:transition md:duration-100 md:ease-in md:hover:scale-110">
             {icon}
           </a>
         ))}

@@ -1,8 +1,8 @@
 import type { SVGProps } from "react";
 
-export default function IconJs(props: SVGProps<SVGSVGElement>) {
+export default function IconJS(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1052 1052" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1052 1052" {...props}>
       {/* <title>Javascript</title> */}
       <path fill="#f0db4f" d="M0 0h1052v1052H0z" />
       <path
