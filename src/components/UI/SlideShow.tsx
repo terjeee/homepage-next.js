@@ -1,5 +1,5 @@
-import IconJS from "@/components/svg/technologies/IconJs";
-import IconTS from "@/components/svg/technologies/IconTs";
+import IconJS from "@/components/svg/technologies/IconJS";
+import IconTS from "@/components/svg/technologies/IconTS";
 import IconPython from "@/components/svg/technologies/IconPython";
 import IconMySQL from "@/components/svg/technologies/IconMySQL";
 import IconReact from "@/components/svg/technologies/IconReact";
@@ -76,17 +76,17 @@ const icons = [
 
 export default function SlideShow() {
   return (
-    <div className="group relative flex overflow-hidden py-4 before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-10 before:bg-gradient-to-r before:from-white before:to-0% after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-10 after:bg-gradient-to-l after:from-white after:to-0% dark:before:from-darkBg dark:after:from-darkBg">
+    <div className="group relative flex overflow-hidden py-4 before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-10 before:bg-gradient-to-r before:from-white before:to-0% after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-10 after:bg-gradient-to-l after:from-white after:to-0% dark:before:from-darkBg dark:after:from-darkBg md:py-5">
       <div className="md:group-hover:animation-pause flex animate-slideShow gap-24 px-12 md:gap-32 md:px-16">
         {icons.map(({ id, icon, path }) => (
-          <a href={path} target="_blank" key={id} className="block w-9 sm:w-10 md:transition md:duration-100 md:ease-in md:hover:scale-110">
+          <a href={path} target="_blank" key={id} className="block w-10 md:transition md:duration-100 md:ease-in md:hover:scale-110">
             {icon}
           </a>
         ))}
       </div>
       <div className="md:group-hover:animation-pause flex animate-slideShow gap-24 px-12 md:gap-32 md:px-16">
         {icons.map(({ id, icon, path }) => (
-          <a href={path} target="_blank" key={id} className="block w-9 sm:w-10 md:transition md:duration-100 md:ease-in md:hover:scale-110">
+          <a href={path} target="_blank" key={id} className="block w-10 md:transition md:duration-100 md:ease-in md:hover:scale-110">
             {icon}
           </a>
         ))}
