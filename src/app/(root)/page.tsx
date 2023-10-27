@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter();
 
-  router.push("https://watashi.no/projects");
+  router.push("/projects");
 
   return (
     <main>
