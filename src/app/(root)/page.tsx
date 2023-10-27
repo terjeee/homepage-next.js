@@ -5,9 +5,9 @@ import Projects from "@/components/UI/ProjectList";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const router = useRouter();
+  // const router = useRouter();
 
-  router.replace("/projects");
+  // router.replace("/projects");
 
   return (
     <main>
