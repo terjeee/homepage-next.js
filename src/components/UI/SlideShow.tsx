@@ -1,6 +1,7 @@
 import IconJS from "@/components/svg/technologies/IconJs";
 import IconTS from "@/components/svg/technologies/IconTs";
 import IconPython from "@/components/svg/technologies/IconPython";
+import IconMySQL from "@/components/svg/technologies/IconMySQL";
 import IconReact from "@/components/svg/technologies/IconReact";
 import IconVue from "@/components/svg/technologies/IconVue";
 import IconSvelte from "@/components/svg/technologies/IconSvelte";
@@ -28,41 +29,46 @@ const icons = [
   },
   {
     id: 4,
+    icon: <IconMySQL className="dark:fill-white" />,
+    path: "https://www.mysql.com/about/",
+  },
+  {
+    id: 5,
     icon: <IconReact />,
     path: "https://react.dev/learn",
   },
   {
-    id: 5,
+    id: 6,
     icon: <IconNext className="dark:fill-white" />,
     path: "https://nextjs.org/docs",
   },
   {
-    id: 6,
+    id: 7,
     icon: <IconSvelte />,
     path: "https://svelte.dev/docs/introduction",
   },
   {
-    id: 7,
+    id: 8,
     icon: <IconVue />,
     path: "https://vuejs.org/guide/introduction.html",
   },
   {
-    id: 8,
+    id: 9,
     icon: <IconSass />,
     path: "https://sass-lang.com/",
   },
   {
-    id: 9,
+    id: 10,
     icon: <IconTailwind />,
     path: "https://tailwindcss.com/docs/installation",
   },
   {
-    id: 10,
+    id: 11,
     icon: <IconNode />,
     path: "https://nodejs.org/en/about",
   },
   {
-    id: 11,
+    id: 12,
     icon: <IconMongoDb className="dark:fill-[#116149]" />,
     path: "https://www.mongodb.com/docs/",
   },
@@ -73,14 +79,14 @@ export default function SlideShow() {
     <div className="group relative flex overflow-hidden py-4 before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-10 before:bg-gradient-to-r before:from-white before:to-0% after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-10 after:bg-gradient-to-l after:from-white after:to-0% dark:before:from-darkBg dark:after:from-darkBg">
       <div className="md:group-hover:animation-pause flex animate-slideShow gap-24 px-12 md:gap-32 md:px-16">
         {icons.map(({ id, icon, path }) => (
-          <a href={path} target="_blank" key={id} className="block w-8 sm:w-10 md:transition md:duration-100 md:ease-in md:hover:scale-110">
+          <a href={path} target="_blank" key={id} className="block w-9 sm:w-10 md:transition md:duration-100 md:ease-in md:hover:scale-110">
             {icon}
           </a>
         ))}
       </div>
       <div className="md:group-hover:animation-pause flex animate-slideShow gap-24 px-12 md:gap-32 md:px-16">
         {icons.map(({ id, icon, path }) => (
-          <a href={path} target="_blank" key={id} className="block w-8 sm:w-10 md:transition md:duration-100 md:ease-in md:hover:scale-110">
+          <a href={path} target="_blank" key={id} className="block w-9 sm:w-10 md:transition md:duration-100 md:ease-in md:hover:scale-110">
             {icon}
           </a>
         ))}
