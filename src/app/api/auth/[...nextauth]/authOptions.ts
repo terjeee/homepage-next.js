@@ -48,7 +48,6 @@ const authOptions: AuthOptions = {
   },
 };
 
-// TODO: provider -> credentials, github?
-// TODO: options
+// TODO: logIn med username+passord: provider - credentials
 
 export default authOptions;
