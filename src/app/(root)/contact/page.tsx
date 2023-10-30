@@ -1,96 +1,43 @@
 "use client";
 
-import { useState, useEffect, useRef, FormEvent } from "react";
-import emailjs from "@emailjs/browser";
-
-import { regexEmail } from "@/utils/regex";
+import { useState } from "react";
 
 export default function Contact() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [emailValid, setEmailValid] = useState<boolean | undefined>(undefined);
-  const [messageValid, setMessageValid] = useState<boolean | undefined>(undefined);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const formData = useRef<HTMLFormElement>(null);
-  const formValid = email.length > 0 && regexEmail.test(email) && message.length >= 5 && message.length < 250;
-
-  useEffect(() => {
-    setEmailValid(true);
-
-    const timeoutEmail = setTimeout(() => {
-      if (email.length > 0 && !regexEmail.test(email)) return setEmailValid(false);
-    }, 1000);
-    return () => clearTimeout(timeoutEmail); // return (useEffect) = clean-up før main code
-  }, [email]);
-
-  useEffect(() => {
-    setMessageValid(true);
-
-    const timeoutMessage = setTimeout(() => {
-      if (message.length !== 0 && (message.length < 5 || message.length > 100)) return setMessageValid(false);
-    }, 1000);
-    return () => clearTimeout(timeoutMessage); // return (+useEffect) = clean-up før main code
-  }, [message]);
-  
-  function handleSendEmail(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    try {
-      if (formData.current) {
-        setIsSubmitting(true);
-
-        emailjs.sendForm("service_contactForm", "template_70fzocf", formData.current, "6hbDSK_0uSjg0vdP5").then(() => {
-          setIsSubmitting(false)
-        });
-        
-        setEmail("");
-        setMessage("");
-      }
-    } catch (error) {
-      setIsSubmitting(false)
-      console.log(error);
-    }
-  }
 
   return (
-    <div className="my-36 flex h-full flex-col items-center justify-center gap-6 sm:my-40 sm:flex-row">
-      <h1 className="hidden text-2xl font-bold tracking-widest sm:block" style={{ writingMode: "vertical-rl", textOrientation: "upright" }}>
-        CONTACT
-      </h1>
-      <form className="flex min-w-[45%] flex-col gap-3" onSubmit={handleSendEmail} ref={formData}>
-        <div className="group relative ">
+    <div className="my-24 flex flex-col items-center justify-center sm:my-40 sm:flex-row">
+      <form className="flex w-4/6 flex-col gap-3 sm:w-7/12" onSubmit={() => {}}>
+        <div className="flex flex-col gap-3 sm:flex-row">
           <input
-            id="formEmail"
+            type="text"
+            placeholder="NAME"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            className="placeholder-grey dark:placeholder-grey rounded-md border border-darkGrey px-2 py-3 font-silkscreen text-sm font-medium text-black focus:rounded-md focus:border-black dark:bg-darkBg dark:text-white dark:focus:border-white sm:w-3/5"
+          />
+          <input
             type="email"
-            name="formEmail"
             placeholder="EMAIL"
             spellCheck={false}
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            className={`placeholder-grey dark:placeholder-grey w-full rounded-md border border-darkGrey px-2 py-3 font-silkscreen text-sm font-medium text-black focus:rounded-md focus:border-black dark:bg-darkSecondary dark:text-white dark:focus:border-white
-            `}
+            className="placeholder-grey dark:placeholder-grey rounded-md border border-darkGrey px-2 py-3 font-silkscreen text-sm font-medium text-black focus:rounded-md focus:border-black dark:bg-darkBg dark:text-white dark:focus:border-white sm:w-full"
           />
-          {!emailValid && <p className="-mb-1 pt-1 text-[13px] font-bold text-red dark:font-semibold">Please enter a valid email.</p>}
         </div>
-        <div>
-          <textarea
-            name="formMsg"
-            id="formMsg"
-            placeholder="Message.."
-            spellCheck={false}
-            value={message}
-            onChange={(event) => setMessage(event.target.value)}
-            className={`dark:focus:border-whitedark:placeholder-grey placeholder-grey block h-28 w-full resize-none rounded-md border border-darkGrey px-2 py-3 font-silkscreen text-sm font-medium text-black focus:rounded-md focus:border-black dark:bg-darkSecondary dark:text-white dark:focus:border-white`}
-          />
-          {!messageValid && <p className="-mb-1 pt-1 text-[13px] font-bold text-red dark:font-semibold">Message needs to be 5-250 characters.</p>}
-        </div>
-        <button
-          className="cursor-pointer rounded-md border border-link bg-link px-2 py-3 font-silkscreen text-sm font-bold text-white disabled:cursor-not-allowed disabled:border-darkGrey disabled:bg-darkGrey"
-          disabled={!formValid}
-        >
-          {isSubmitting ? "Sending.." : "SEND"}
+        <textarea
+          placeholder="Message.."
+          spellCheck={false}
+          value={message}
+          onChange={(event) => setMessage(event.target.value)}
+          className={`dark:focus:border-whitedark:placeholder-grey placeholder-grey block h-36 w-full resize-none rounded-md border border-darkGrey px-2 py-3 font-silkscreen text-sm font-medium text-black focus:rounded-md focus:border-black dark:bg-darkBg dark:text-white dark:focus:border-white`}
+        />
+        <button className="text-md cursor-pointer rounded-md border border-link bg-link px-2 py-2 font-silkscreen font-bold text-white sm:py-3">
+          SEND
         </button>
+        {/* TODO: reCAPTCHA */}
       </form>
     </div>
   );
