@@ -5,7 +5,7 @@ import Authetication from "@/components/UI/Authetication/page.";
 
 export default function Nav() {
   return (
-    <nav className="my-4 flex justify-between">
+    <nav className="my-6 flex justify-between sm:my-4">
       <NavMobile />
       <NavDesktop />
       <div className="flex gap-3">
