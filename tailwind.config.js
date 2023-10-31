@@ -26,11 +26,17 @@ module.exports = {
       },
       animation: {
         slideShow: "slideShow 50s linear infinite",
+        bgRainbow: "bgRainbow 2s linear infinite",
       },
       keyframes: {
         slideShow: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-100%)" },
+        },
+        bgRainbow: {
+          "0%": { "background-position": "0% 50%" },
+          "50%": { "background-position": "100% 50%" },
+          "100%": { "background-position": "0% 50%" },
         },
       },
     },
