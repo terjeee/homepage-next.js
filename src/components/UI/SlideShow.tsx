@@ -1,5 +1,5 @@
-import IconJs from "@/components/svg/technologies/IconJs";
-import IconTs from "@/components/svg/technologies/IconTs";
+import IconJavascript from "@/components/svg/technologies/IconJavascript";
+import IconTypescript from "@/components/svg/technologies/IconTypescript";
 import IconPython from "@/components/svg/technologies/IconPython";
 import IconMySQL from "@/components/svg/technologies/IconMySQL";
 import IconReact from "@/components/svg/technologies/IconReact";
@@ -14,12 +14,12 @@ import IconMongoDb from "@/components/svg/technologies/IconMongoDb";
 const icons = [
   {
     id: 1,
-    icon: <IconJs />,
+    icon: <IconJavascript />,
     path: "https://en.wikipedia.org/wiki/JavaScript",
   },
   {
     id: 2,
-    icon: <IconTs />,
+    icon: <IconTypescript />,
     path: "https://www.typescriptlang.org/",
   },
   {
