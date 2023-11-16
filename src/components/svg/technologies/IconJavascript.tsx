@@ -1,6 +1,6 @@
 import type { SVGProps } from "react";
 
-export default function IconJS(props: SVGProps<SVGSVGElement>) {
+export default function IconJavascript(props: SVGProps<SVGSVGElement>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1052 1052" {...props}>
       {/* <title>Javascript</title> */}
