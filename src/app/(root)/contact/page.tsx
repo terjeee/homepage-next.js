@@ -6,7 +6,10 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-
+  
+  const btnSubmit = useRef<HTMLButtonElement>();
+  const btnReset = useRef<HTMLButtonElement>(); 
+  
   function resetContactForm() {
     setName("");
     setEmail("");
@@ -16,11 +19,7 @@ export default function Contact() {
   function submitContactForm(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    // TODO: disable buttons med useRef()
-
-    console.log(name);
-    console.log(email);
-    console.log(message);
+    if (btnSubmit.current) btnSubmit.current.disabled = true;
 
     // formValues === true
     // TODO: POST form to email.js
@@ -29,12 +28,11 @@ export default function Contact() {
     // TODO: enable buttons med useRef()
     // TODO: loading på submitBTN
     // TODO: Toast.tsx - success melding
-    
-    // formValues === false
-    // TODO: error - Toast.tsx (egen komponent m/customization: bottom-left | bottom-middle | bottom-right )  
-    // TODO: enable buttons med useRef()
 
+    // formValues === false
+    // TODO: error - Toast.tsx (egen komponent m/customization: bottom-left | bottom-middle | bottom-right )
     
+    if (btnSubmit.current) btnSubmit.current.disabled = false;
   }
 
   return (
@@ -62,17 +60,18 @@ export default function Contact() {
           spellCheck={false}
           value={message}
           onChange={(event) => setMessage(event.target.value)}
-          className={`dark:focus:border-whitedark:placeholder-grey placeholder-grey block h-36 w-full resize-none rounded-md border border-darkGrey px-2 py-3 font-silkscreen text-sm font-medium text-black focus:rounded-md focus:border-black dark:bg-darkBg dark:text-white dark:focus:border-white`}
+          className={`dark:placeholder-grey placeholder-grey block h-36 w-full resize-none rounded-md border border-darkGrey px-2 py-3 font-silkscreen text-sm font-medium text-black focus:rounded-md focus:border-black dark:bg-darkBg dark:text-white dark:focus:border-white dark:focus:border-white`}
         />
         <div className="flex gap-3">
-          <button className="text-md w-2/3 cursor-pointer rounded-md border border-link bg-link px-2 py-2 font-silkscreen font-bold text-white focus:rounded-md sm:py-2">
+          <button ref={btnSubmit} className="text-md w-5/6 cursor-pointer rounded-md border border-link bg-link px-2 py-2 font-silkscreen font-bold text-white focus:rounded-md dark:focus:border-white sm:py-2">
             SEND
           </button>
           <button
+            ref={btnReset}
             onClick={resetContactForm}
-            className="text-md cursor-pointer rounded-md border border-red bg-red px-2 py-2 font-silkscreen font-bold text-white focus:rounded-md sm:py-2"
+            className="text-md w-1/6 cursor-pointer rounded-md border border-darkGrey px-2 py-2 font-silkscreen font-bold text-white focus:rounded-md focus:border-white sm:py-2"
           >
-            RESET
+            👻
           </button>
         </div>
         {/* TODO: reCAPTCHA */}

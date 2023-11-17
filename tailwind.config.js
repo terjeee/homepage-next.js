@@ -24,10 +24,6 @@ module.exports = {
       boxShadow: {
         github: "rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.2) 0px 0px 0px 1px",
       },
-      animation: {
-        slideShow: "slideShow 50s linear infinite",
-        bgRainbow: "bgRainbow 2s linear infinite",
-      },
       keyframes: {
         slideShow: {
           "0%": { transform: "translateX(0)" },
@@ -38,6 +34,15 @@ module.exports = {
           "50%": { "background-position": "100% 50%" },
           "100%": { "background-position": "0% 50%" },
         },
+        fadeOut: {
+          "0%": { opacity: 1 },
+          "100%": { opacity: 0 },
+        },
+      },
+      animation: {
+        slideShow: "slideShow 50s linear infinite",
+        bgRainbow: "bgRainbow 2s linear infinite",
+        fadeOut: "fadeOut 0.5s ease-in"
       },
     },
   },
