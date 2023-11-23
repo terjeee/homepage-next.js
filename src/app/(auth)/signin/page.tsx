@@ -40,11 +40,11 @@ export default function SignIn() {
           <span className="font-semibold">Continue with Github</span>
         </button>
       </div>
-      <hr className="my-2" />
+      {/* <hr className="my-2" />
       <form action="submit" onSubmit={() => alert("Sign In")} className="flex flex-col gap-4">
-        {/* <label htmlFor="username">Username</label> */}
+        <label htmlFor="username">Username</label>
         <input type="text" id="username" name="username" placeholder="username" className="rounded-md border px-2 py-1" />
-        {/* <label htmlFor="password">Password</label> */}
+        <label htmlFor="password">Password</label>
         <input
           type="password"
           id="password"
@@ -53,7 +53,7 @@ export default function SignIn() {
           className="rounded-md border px-2 py-1"
         />
         <button type="submit">Sign In</button>
-      </form>
+      </form> */}
     </section>
   );
 }
