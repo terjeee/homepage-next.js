@@ -32,7 +32,7 @@ export default function Contact() {
     }, 1000);
     return () => clearTimeout(timeoutMessage); // return (+useEffect) = clean-up før main code
   }, [message]);
-  
+
   function handleSendEmail(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -41,14 +41,14 @@ export default function Contact() {
         setIsSubmitting(true);
 
         emailjs.sendForm("service_contactForm", "template_70fzocf", formData.current, "6hbDSK_0uSjg0vdP5").then(() => {
-          setIsSubmitting(false)
+          setIsSubmitting(false);
         });
-        
+
         setEmail("");
         setMessage("");
       }
     } catch (error) {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
       console.log(error);
     }
   }
@@ -68,8 +68,7 @@ export default function Contact() {
             spellCheck={false}
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            className={`placeholder-grey dark:placeholder-grey w-full rounded-md border border-darkGrey px-2 py-3 font-silkscreen text-sm font-medium text-black focus:rounded-md focus:border-black dark:bg-darkSecondary dark:text-white dark:focus:border-white
-            `}
+            className={`placeholder-grey dark:placeholder-grey w-full rounded-md border border-darkGrey px-2 py-3 font-silkscreen text-sm font-medium text-black focus:rounded-md focus:border-black dark:bg-darkSecondary dark:text-white dark:focus:border-white`}
           />
           {!emailValid && <p className="-mb-1 pt-1 text-[13px] font-bold text-red dark:font-semibold">Please enter a valid email.</p>}
         </div>

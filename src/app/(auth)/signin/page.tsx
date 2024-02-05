@@ -22,38 +22,38 @@ export default function SignIn() {
 
   return (
     <section className="m-auto flex flex-col justify-center gap-4 p-4">
-      <div className="flex items-center justify-center rounded-md border-[1px]">
-        <button
-          onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
-          className="flex items-center justify-center gap-5 px-6 py-3"
-        >
-          <SVGGoogle />
-          <span className="font-semibold">Continue with Google</span>
-        </button>
-      </div>
-      <div className="flex items-center justify-center rounded-md border-[1px]">
-        <button
-          onClick={() => signIn("github", { callbackUrl: "/dashboard" })}
-          className="flex items-center justify-center gap-5 px-6 py-3"
-        >
-          <SVGGithub />
-          <span className="font-semibold">Continue with Github</span>
-        </button>
-      </div>
-      <hr className="my-2" />
       <form action="submit" onSubmit={() => alert("Sign In")} className="flex flex-col gap-4">
         {/* <label htmlFor="username">Username</label> */}
-        <input type="text" id="username" name="username" placeholder="username" className="rounded-md border px-2 py-1" />
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="username"
+          className="placeholder-grey dark:placeholder-grey w-full rounded-md border border-darkGrey px-2 py-3 font-silkscreen text-sm font-medium text-black focus:rounded-md focus:border-black dark:bg-darkSecondary dark:text-white dark:focus:border-white"
+        />
         {/* <label htmlFor="password">Password</label> */}
         <input
           type="password"
           id="password"
           name="password"
           placeholder="password"
-          className="rounded-md border px-2 py-1"
+          className="placeholder-grey dark:placeholder-grey w-full rounded-md border border-darkGrey px-2 py-3 font-silkscreen text-sm font-medium text-black focus:rounded-md focus:border-black dark:bg-darkSecondary dark:text-white dark:focus:border-white"
         />
         <button type="submit">Sign In</button>
+        <hr className="my-2" />
       </form>
+      <div className="flex items-center justify-center rounded-md border-[1px]">
+        <button onClick={() => signIn("google", { callbackUrl: "/dashboard" })} className="flex items-center justify-center gap-5 px-6 py-3">
+          <SVGGoogle />
+          <span className="font-semibold">Continue with Google</span>
+        </button>
+      </div>
+      <div className="flex items-center justify-center rounded-md border-[1px]">
+        <button onClick={() => signIn("github", { callbackUrl: "/dashboard" })} className="flex items-center justify-center gap-5 px-6 py-3">
+          <SVGGithub />
+          <span className="font-semibold">Continue with Github</span>
+        </button>
+      </div>
     </section>
   );
 }
