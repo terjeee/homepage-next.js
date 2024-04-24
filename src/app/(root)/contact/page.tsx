@@ -14,7 +14,6 @@ export default function Contact() {
   const [messageValid, setMessageValid] = useState<boolean | undefined>(undefined);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const EMAILJS_KEY: undefined | string = process.env.EMAILJS_KEY;
   const formData = useRef<HTMLFormElement>(null);
   const formIsValid = email.length > 0 && regexEmail.test(email) && message.length >= 5 && message.length < 250;
 
@@ -41,13 +40,18 @@ export default function Contact() {
 
     if (formData.current) {
       setIsSubmitting(true);
-      const response = await emailjs.sendForm("service_contactForm", "template_70fzocf", formData.current, EMAILJS_KEY);
+
+      const response = await emailjs.sendForm(
+        "service_contactForm",
+        "template_70fzocf",
+        formData.current,
+        "6hbDSK_0uSjg0vdP5"
+      );
 
       if (response.text === "OK") {
         // TODO: hotToast success
-        return;
+        console.log("xd")
       } else {
-        return;
         // TODO: hotToast error
       }
 
@@ -61,7 +65,7 @@ export default function Contact() {
 
   return (
     <div className="my-20 flex flex-col items-center justify-center sm:my-32">
-      <form className="sm:w-/12 flex w-4/6 flex-col gap-3" onSubmit={handleSendEmail} ref={formData}>
+      <form onSubmit={handleSendEmail} ref={formData} className="flex w-5/6 flex-col gap-3 sm:w-7/12">
         <input
           id="formName"
           name="formName"
@@ -72,39 +76,33 @@ export default function Contact() {
           spellCheck={false}
           className="placeholder-grey dark:placeholder-grey rounded-md border border-darkGrey px-2 py-3 font-quicksand text-sm font-medium text-black focus:rounded-md focus:border-black dark:bg-darkBg dark:text-white dark:focus:border-white"
         />
-        <>
-          <input
-            id="formEmail"
-            name="formEmail"
-            type="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-            placeholder="email"
-            spellCheck={false}
-            className="placeholder-grey dark:placeholder-grey w-full rounded-md border border-darkGrey px-2 py-3 font-quicksand text-sm font-medium text-black focus:rounded-md focus:border-black dark:bg-darkBg dark:text-white dark:focus:border-white"
-          />
-          {emailValid === false && (
-            <p className="mb-1 text-[13px] font-bold text-red dark:font-semibold">Please enter a valid email</p>
-          )}
-        </>
-        <>
-          <textarea
-            id="formMsg"
-            name="formMsg"
-            value={message}
-            onChange={(event) => setMessage(event.target.value)}
-            // placeholder="message"
-            spellCheck={false}
-            className={`dark:placeholder-grey placeholder-grey block h-36 w-full resize-none rounded-md border border-darkGrey px-2 py-3 font-quicksand text-sm font-medium text-black focus:rounded-md focus:border-black dark:bg-darkBg dark:text-white dark:focus:border-white`}
-          />
-          {messageValid === false && (
-            <p className="mb-1 pt-1 text-[13px] font-bold text-red dark:font-semibold">
-              Message needs to be 5-250 characters
-            </p>
-          )}
-        </>
+        <input
+          id="formEmail"
+          name="formEmail"
+          type="email"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+          placeholder="email"
+          spellCheck={false}
+          className="w-full rounded-md border border-darkGrey px-2 py-3 font-quicksand text-sm font-medium text-black focus:rounded-md focus:border-black dark:bg-darkBg dark:text-white dark:focus:border-white"
+        />
+        <textarea
+          id="formMsg"
+          name="formMsg"
+          value={message}
+          onChange={(event) => setMessage(event.target.value)}
+          // placeholder="message"
+          spellCheck={false}
+          className={`h-36 w-full resize-none rounded-md border border-darkGrey px-2 py-3 font-quicksand text-sm text-black focus:rounded-md focus:border-black dark:bg-darkBg dark:text-white dark:focus:border-white`}
+        />
+        {(emailValid === false || messageValid === false) && (
+          <ul className="flex list-inside list-disc flex-col gap-1 py-1 ">
+            {emailValid === false && <li className="text-[13px] font-semibold text-red">Please enter a valid email</li>}
+            {messageValid === false && <li className="text-[13px] font-semibold text-red">Message needs to be 5-250 characters</li>}
+          </ul>
+        )}
         <button
-          className="sm:text-md align-center flex w-full cursor-pointer justify-center rounded-md border border-link bg-link px-2 py-2 font-quicksand text-sm font-semibold tracking-wide text-white focus:rounded-md disabled:cursor-not-allowed disabled:border-darkGrey disabled:bg-darkGrey"
+          className="flex w-full cursor-pointer justify-center rounded-md border border-link bg-link px-2 py-2 font-quicksand text-sm font-semibold tracking-wide text-white focus:rounded-md disabled:cursor-not-allowed disabled:border-darkGrey disabled:bg-darkGrey md:text-base"
           disabled={!formIsValid}
         >
           {isSubmitting ? <SVGLoading className="h-6" /> : "SEND MESSAGE"}
