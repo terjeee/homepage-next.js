@@ -40,8 +40,6 @@ export default function Authenticated(props: Props) {
     };
   }, []);
 
-  // TODO: sjekk om bruker er ADMIN eller USER, om Admin rended <Link /> til admin-dsahboard
-
   return (
     <div ref={refMenu} className="relative my-auto">
       <button className="block cursor-pointer rounded-full" onClick={() => setShowDropdown((prevState) => !prevState)}>
