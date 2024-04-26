@@ -40,7 +40,7 @@ module.exports = {
         },
       },
       animation: {
-        slideShow: "slideShow 50s linear infinite",
+        slideShow: "slideShow 100s linear infinite",
         bgRainbow: "bgRainbow 2s linear infinite",
         fadeOut: "fadeOut 0.5s ease-in"
       },

@@ -27,8 +27,8 @@ export default function ProjectList() {
                 <div className="flex justify-between">
                   <div className="flex items-center justify-center gap-2">
                     <IconRepository width="15px" />
-                    <h2 className=" cursor-button text-md font-bold text-link group-hover:underline md:text-lg">{el.title}</h2>
-                    <span className="mx-auto rounded-full border border-[#A9A9A9] px-[0.25rem] py-[0.1rem] text-center text-[9px] font-bold md:text-[11px]">
+                    <h2 className="font-bold text-link group-hover:underline md:text-lg">{el.title}</h2>
+                    <span className="mx-auto rounded-full border border-[#A9A9A9] px-[0.35rem] py-[0.1rem] text-center text-[9px] font-bold md:text-[11px]">
                       Public
                     </span>
                   </div>
@@ -37,7 +37,7 @@ export default function ProjectList() {
                 </div>
                 <div className="items-align flex gap-2">
                   <span className={`my-auto h-[12px] w-[12px] rounded-full bg-${el.colorDot}`} style={{ backgroundColor: el.colorDot }}></span>
-                  <p className="text-xs md:text-sm">{el.text}</p>
+                  <p className="text-xs md:text-[13px]">{el.text}</p>
                 </div>
               </a>
             </motion.li>
