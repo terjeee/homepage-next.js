@@ -10,7 +10,7 @@ export default function ProjectList() {
   const projects = [...PROJECTS].reverse();
 
   return (
-    <ul className="flex flex-col gap-5 sm:grid sm:auto-cols-fr">
+    <ul className="flex flex-col gap-5 sm:grid sm:auto-cols-fr mt-4 mb-16">
       {projects.map((el, index) => {
         const colSpan = (index + 1) % 3 === 0 ? "col-span-2" : "col-span-1";
 

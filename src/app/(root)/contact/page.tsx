@@ -91,7 +91,7 @@ export default function Contact() {
           name="formMsg"
           value={message}
           onChange={(event) => setMessage(event.target.value)}
-          // placeholder="message"
+          placeholder="message"
           spellCheck={false}
           className={`h-36 w-full resize-none rounded-md border border-darkGrey px-2 py-3 font-quicksand text-sm text-black focus:rounded-md focus:border-black dark:bg-darkBg dark:text-white dark:focus:border-white`}
         />
@@ -102,7 +102,7 @@ export default function Contact() {
           </ul>
         )}
         <button
-          className="flex w-full cursor-pointer justify-center rounded-md border border-link bg-link px-2 py-2 font-quicksand text-sm font-semibold tracking-wide text-white focus:rounded-md disabled:cursor-not-allowed disabled:border-darkGrey disabled:bg-darkGrey md:text-base"
+          className="flex w-full cursor-pointer justify-center rounded-md border border-link bg-link px-2 py-2.5 md:py-2 font-quicksand text-sm font-semibold tracking-wide text-white focus:rounded-md disabled:cursor-not-allowed disabled:border-darkGrey disabled:bg-darkGrey md:text-base"
           disabled={!formIsValid}
         >
           {isSubmitting ? <SVGLoading className="h-6" /> : "SEND MESSAGE"}
