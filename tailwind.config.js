@@ -17,7 +17,7 @@ module.exports = {
       purple: "#DC6BAD",
       orange: "#FF9000",
       link: "#0969da",
-      darkBg: "#040404",
+      darkBg: "#1a1a1a",
       darkSecondary: "#191919",
     },
     extend: {
