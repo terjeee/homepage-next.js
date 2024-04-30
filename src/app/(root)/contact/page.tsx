@@ -50,7 +50,7 @@ export default function Contact() {
 
       if (response.text === "OK") {
         // TODO: hotToast success
-        console.log("xd")
+        console.log("xd");
       } else {
         // TODO: hotToast error
       }
@@ -74,7 +74,7 @@ export default function Contact() {
           onChange={(event) => setName(event.target.value)}
           placeholder="name"
           spellCheck={false}
-          className="placeholder-grey dark:placeholder-grey rounded-md border border-darkGrey px-2 py-3 font-quicksand text-sm font-medium text-black focus:rounded-md dark:border-darkGrey focus:border-link dark:bg-darkBg dark:text-white dark:focus:border-link"
+          className="placeholder-grey dark:placeholder-grey rounded-lg border border-darkGrey px-2 py-3 font-quicksand text-sm font-medium text-black focus:rounded-lg focus:border-link dark:bg-darkBg dark:text-white dark:focus:border-link"
         />
         <input
           id="formEmail"
@@ -84,25 +84,27 @@ export default function Contact() {
           onChange={(event) => setEmail(event.target.value)}
           placeholder="email"
           spellCheck={false}
-          className="w-full rounded-md border border-darkGrey px-2 py-3 font-quicksand text-sm font-medium text-black focus:rounded-md focus:border-link dark:bg-darkBg dark:text-white dark:focus:border-link"
+          className="w-full rounded-lg border border-darkGrey px-2 py-3 font-quicksand text-sm font-medium text-black focus:rounded-lg focus:border-link dark:bg-darkBg dark:text-white dark:focus:border-link"
         />
         <textarea
           id="formMsg"
           name="formMsg"
           value={message}
           onChange={(event) => setMessage(event.target.value)}
-          placeholder="message"
+          placeholder=""
           spellCheck={false}
-          className={`h-36 w-full resize-none rounded-md border border-darkGrey px-2 py-3 font-quicksand text-sm text-black focus:rounded-md focus:border-link dark:bg-darkBg dark:text-white dark:focus:border-link`}
+          className={`h-28 w-full resize-none rounded-lg border border-darkGrey px-2 py-3 font-quicksand text-sm text-black focus:rounded-lg focus:border-link dark:bg-darkBg dark:text-white dark:focus:border-link`}
         />
         {(emailValid === false || messageValid === false) && (
           <ul className="flex list-inside list-disc flex-col gap-1 py-1 ">
             {emailValid === false && <li className="text-[13px] font-semibold text-red">Please enter a valid email</li>}
-            {messageValid === false && <li className="text-[13px] font-semibold text-red">Message needs to be 5-250 characters</li>}
+            {messageValid === false && (
+              <li className="text-[13px] font-semibold text-red">Message needs to be 5-250 characters</li>
+            )}
           </ul>
         )}
         <button
-          className="flex w-full cursor-pointer justify-center rounded-md border border-link bg-link px-2 py-2.5 md:py-2 font-quicksand text-sm font-semibold tracking-wide text-white focus:rounded-md focus:border-black dark:focus:border-white disabled:cursor-not-allowed disabled:border-darkGrey disabled:bg-darkGrey md:text-base"
+          className="flex w-full cursor-pointer justify-center rounded-lg border border-link bg-link px-2 py-2.5 md:py-2 font-quicksand text-sm font-semibold tracking-wide text-white focus:rounded-lg focus:border-black disabled:cursor-not-allowed disabled:border-darkGrey disabled:bg-darkGrey dark:focus:border-white"
           disabled={!formIsValid}
         >
           {isSubmitting ? <SVGLoading className="h-6" /> : "SEND MESSAGE"}
