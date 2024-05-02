@@ -19,7 +19,7 @@ export default function NavDesktop() {
           <li
             key={title}
             className={`border-b-2 px-1 pb-[0.5px] font-semibold hover:border-black hover:dark:border-white
-            ${currentPath !== path ? "border-[rgba(0,0,0,0)]" : "border-red hover:border-red dark:hover:border-red"}`}
+            ${currentPath !== path ? "border-[rgba(0,0,0,0)]" : "border-red hover:border-red hover:dark:border-red"}`}
           >
             <Link href={path}>{title}</Link>
           </li>

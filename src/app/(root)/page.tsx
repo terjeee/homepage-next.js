@@ -14,8 +14,8 @@ export default function Home() {
 
   return (
     <main>
+      {/* <WeatherComponent /> */}
       {/* <Header /> */}
-      {/* <Projects /> */}
     </main>
   );
 }
