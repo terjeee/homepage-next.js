@@ -10,7 +10,7 @@ export default function ProjectList() {
   const projects = [...PROJECTS].reverse();
 
   return (
-    <ul className="mb-8 md:mb-16 mt-4 flex flex-col gap-5 sm:grid sm:auto-cols-fr">
+    <ul className="my-8 flex flex-col gap-5 sm:grid sm:auto-cols-fr">
       {projects.map((el, index) => {
         const colSpan = (index + 1) % 3 === 0 ? "col-span-2" : "col-span-1";
 
@@ -36,10 +36,7 @@ export default function ProjectList() {
                   <SVGDots width="12px" fill="#A9A9A9" />
                 </div>
                 <div className="items-align flex gap-2">
-                  <span
-                    className={`my-auto h-[12px] w-[12px] rounded-full bg-${el.colorDot}`}
-                    style={{ backgroundColor: el.colorDot }}
-                  ></span>
+                  <span className={`my-auto h-[12px] w-[12px] rounded-full bg-${el.colorDot}`} style={{ backgroundColor: el.colorDot }}></span>
                   <p className="text-xs md:text-[13px]">{el.text}</p>
                 </div>
               </a>
