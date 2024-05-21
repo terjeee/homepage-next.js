@@ -17,7 +17,7 @@ module.exports = {
       purple: "#DC6BAD",
       orange: "#FF9000",
       link: "#0969da",
-      darkBg: "#1a1a1a",
+      darkBg: "#020202",
       darkSecondary: "#191919",
     },
     extend: {
@@ -42,7 +42,7 @@ module.exports = {
       animation: {
         slideShow: "slideShow 100s linear infinite",
         bgRainbow: "bgRainbow 2s linear infinite",
-        fadeOut: "fadeOut 0.5s ease-in"
+        fadeOut: "fadeOut 0.5s ease-in",
       },
     },
   },
