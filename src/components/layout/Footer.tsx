@@ -22,7 +22,7 @@ export default function Footer() {
             <SVGMail />
           </Link>
         </div>
-        <ul className="flex gap-2 sm:absolute sm:right-0 sm:mr-10">
+        {/* <ul className="flex gap-2 sm:absolute sm:right-0 sm:mr-10">
           {languages.map((language, index) => {
             return (
               <li className="flex gap-2">
@@ -30,7 +30,7 @@ export default function Footer() {
               </li>
             );
           })}
-        </ul>
+        </ul> */}
       </div>
     </footer>
   );

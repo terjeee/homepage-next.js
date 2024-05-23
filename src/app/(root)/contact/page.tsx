@@ -104,7 +104,7 @@ export default function Contact() {
           </ul>
         )}
         <button
-          className="flex w-full cursor-pointer justify-center rounded-lg border border-link bg-link px-2 py-3 font-quicksand text-sm font-semibold tracking-wide text-white focus:rounded-lg focus:outline-black disabled:cursor-not-allowed disabled:border-darkGrey disabled:bg-darkGrey dark:focus:outline-white"
+          className="flex w-full cursor-pointer justify-center rounded-lg border border-link bg-link px-2 py-2.5 font-quicksand text-sm font-semibold tracking-wide text-white focus:rounded-lg focus:outline-black disabled:cursor-not-allowed disabled:border-darkGrey disabled:bg-darkGrey dark:focus:outline-white"
           disabled={!formIsValid}
         >
           {isSubmitting ? <SVGLoading className="h-6" /> : "SEND MESSAGE"}
