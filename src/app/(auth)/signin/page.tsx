@@ -21,7 +21,7 @@ export default function SignIn() {
   if (status === "authenticated") return router.push("/");
 
   return (
-    <section className="m-auto flex flex-col justify-center gap-4 p-4">
+    <section className="m-auto flex flex-col justify-center gap-4">
       <div className="flex items-center justify-center rounded-md border-[1px]">
         <button onClick={() => signIn("google", { callbackUrl: "/dashboard" })} className="flex items-center justify-center gap-5 px-6 py-3">
           <SVGGoogle />

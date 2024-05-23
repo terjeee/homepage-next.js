@@ -64,8 +64,8 @@ export default function Contact() {
   }
 
   return (
-    <div className="my-20 flex flex-col items-center justify-center sm:my-32">
-      <form onSubmit={handleSendEmail} ref={formData} className="flex w-5/6 flex-col gap-3 sm:w-7/12">
+    <div className="my-20 flex flex-col items-center justify-center sm:mt-28">
+      <form onSubmit={handleSendEmail} ref={formData} className="flex w-full flex-col gap-3 sm:w-7/12">
         <input
           id="formName"
           name="formName"
@@ -94,7 +94,7 @@ export default function Contact() {
           onChange={(event) => setMessage(event.target.value)}
           placeholder=""
           spellCheck={false}
-          className={`h-28 w-full rounded-lg border border-darkGrey px-2 py-2.5 font-quicksand text-sm text-black focus:rounded-lg dark:bg-darkBg dark:text-white
+          className={`h-32 w-full rounded-lg border border-darkGrey px-2 py-2.5 font-quicksand text-sm text-black focus:rounded-lg dark:bg-darkBg dark:text-white
             ${messageValid === false ? "border-red focus:outline-red focus:outline-double dark:focus:outline-red" : "focus:border-link focus:outline-link dark:focus:outline-link"}`}
         />
         {(emailValid === false || messageValid === false) && (
@@ -104,7 +104,7 @@ export default function Contact() {
           </ul>
         )}
         <button
-          className="flex w-full cursor-pointer justify-center rounded-lg border border-link bg-link px-2 py-2.5 font-quicksand text-sm font-semibold tracking-wide text-white focus:rounded-lg focus:outline-black disabled:cursor-not-allowed disabled:border-darkGrey disabled:bg-darkGrey dark:focus:outline-white"
+          className="flex w-full cursor-pointer justify-center rounded-lg border border-link bg-link px-2 py-3 font-quicksand text-sm font-semibold tracking-wide text-white focus:rounded-lg focus:outline-black disabled:cursor-not-allowed disabled:border-darkGrey disabled:bg-darkGrey dark:focus:outline-white"
           disabled={!formIsValid}
         >
           {isSubmitting ? <SVGLoading className="h-6" /> : "SEND MESSAGE"}
