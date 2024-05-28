@@ -65,7 +65,7 @@ export default function Contact() {
 
   return (
     <div className="my-20 flex flex-col items-center justify-center sm:mt-28">
-      <form onSubmit={handleSendEmail} ref={formData} className="flex w-full flex-col gap-3 sm:w-7/12">
+      <form onSubmit={handleSendEmail} ref={formData} className="flex w-full flex-col gap-3 xs:w-9/12 sm:w-7/12">
         <input
           id="formName"
           name="formName"
@@ -74,7 +74,7 @@ export default function Contact() {
           onChange={(event) => setName(event.target.value)}
           placeholder="name"
           spellCheck={false}
-          className="placeholder-grey dark:placeholder-grey rounded-lg border border-darkGrey px-2 py-2.5 font-quicksand text-sm font-medium text-black focus:border-link focus:rounded-lg focus:outline-link dark:bg-darkBg dark:text-white dark:focus:outline-link"
+          className="placeholder-grey dark:placeholder-grey rounded-lg border border-darkGrey px-2 py-2.5 font-quicksand text-sm font-medium text-black focus:border-link focus:rounded-lg dark:bg-darkBg dark:text-white dark:focus:border-link dark:hover:border-link hover:border-link"
         />
         <input
           id="formEmail"
@@ -85,7 +85,7 @@ export default function Contact() {
           placeholder="email"
           spellCheck={false}
           className={`w-full rounded-lg border border-darkGrey px-2 py-2.5 font-quicksand text-sm font-medium text-black focus:rounded-lg dark:bg-darkBg dark:text-white
-            ${emailValid === false ? "border-red focus:outline-red dark:focus:outline-red" : "focus:border-link focus:outline-link dark:focus:outline-link"}`}
+            ${emailValid === false ? "border-red dark:border-red focus:border-red dark:focus:border-red hover:border-red dark:hover:border-red" : "focus:border-link dark:focus:border-link dark:hover:border-link hover:border-link"}`}
         />
         <textarea
           id="formMsg"
@@ -95,7 +95,7 @@ export default function Contact() {
           placeholder=""
           spellCheck={false}
           className={`h-32 w-full rounded-lg border border-darkGrey px-2 py-2.5 font-quicksand text-sm text-black focus:rounded-lg dark:bg-darkBg dark:text-white
-            ${messageValid === false ? "border-red focus:outline-red focus:outline-double dark:focus:outline-red" : "focus:border-link focus:outline-link dark:focus:outline-link"}`}
+            ${messageValid === false ? "border-red dark:border-red focus:border-red dark:focus:border-red hover:border-red dark:hover:border-red" : "focus:border-link dark:focus:border-link hover:border-link dark:hover:border-link"}`}
         />
         {(emailValid === false || messageValid === false) && (
           <ul className="flex list-inside list-disc flex-col text-red gap-1 py-1 ">
@@ -104,7 +104,7 @@ export default function Contact() {
           </ul>
         )}
         <button
-          className="flex w-full cursor-pointer justify-center rounded-lg border border-link bg-link px-2 py-2.5 font-quicksand text-sm font-semibold tracking-wide text-white focus:rounded-lg focus:outline-black disabled:cursor-not-allowed disabled:border-darkGrey disabled:bg-darkGrey dark:focus:outline-white"
+          className="flex w-full cursor-pointer justify-center rounded-lg border border-link bg-link px-2 py-2.5 md:py-3 font-quicksand text-sm font-semibold tracking-wide text-white focus:rounded-lg focus:outline-black disabled:cursor-not-allowed disabled:border-darkGrey disabled:bg-darkGrey dark:focus:outline-white"
           disabled={!formIsValid}
         >
           {isSubmitting ? <SVGLoading className="h-6" /> : "SEND MESSAGE"}
